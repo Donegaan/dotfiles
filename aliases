@@ -1,0 +1,25 @@
+# Shortcuts
+alias go="cd ~/Google\ Drive/"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+
+colorflag="-G"
+export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
+
+# List all files colorized in long format, including dot files
+alias la="ls -laF ${colorflag}"
+
+# List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"

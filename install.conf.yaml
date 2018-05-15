@@ -1,9 +1,16 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
 - clean: ['~']
 
 - link:
-    ~/.profile: profile
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
+    ~/.bash_prompt: bash_prompt
+    ~/.aliases: aliases
     ~/.gitconfig: gitconfig
 
 
