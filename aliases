@@ -23,3 +23,20 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# git shortcuts
+alias gs="git status"
+alias ga="git add -A ."
+alias gc="git commit"
+alias gb="git branch"
+alias gd="git diff"
+alias gco="git checkout"
+alias gp="git push"
+alias gpl="git pull"
+alias gt="git tag"
+alias gm="git merge"
+alias gg="git log --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Easier navigation: .., ...
+alias ..="cd .."
+alias ...="cd ../.."
