@@ -2,18 +2,19 @@
 alias go="cd ~/Google\ Drive/"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias doc="cd ~/Documents"
 
-colorflag="-G"
+colorflag="-GF"
 export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 
 # List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+alias la="ls -la ${colorflag}"
 
 # List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+alias lsd="ls -l ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+alias ls="ls ${colorflag}"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
