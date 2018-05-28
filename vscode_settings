@@ -1,0 +1,23 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "files.autoSave": "onFocusChange",
+    "window.zoomLevel": 0,
+    "files.associations": {
+        "*.pl": "prolog",
+        "bash_prompt": "shellscript",
+        "bash_profile": "shellscript",
+        "aliases": "shellscript",
+        "bashrc": "shellscript"
+    },
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 13,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "workbench.statusBar.feedback.visible": false,
+    "latex-workshop.message.update.show": false,
+    "terminal.integrated.cursorStyle": "line",
+    "code-runner.runInTerminal": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "git.confirmSync": false
+}

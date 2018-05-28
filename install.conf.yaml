@@ -12,5 +12,6 @@
     ~/.bash_prompt: bash_prompt
     ~/.aliases: aliases
     ~/.gitconfig: gitconfig
+    ~/.Library/Application Support/Code/User/settings.json : vscode_settings
 
 
