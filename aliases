@@ -41,3 +41,6 @@ alias gl="git log --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow
 # Easier navigation: .., ...
 alias ..="cd .."
 alias ...="cd ../.."
+
+# Python shortcuts
+alias python="python3"
