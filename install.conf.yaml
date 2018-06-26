@@ -12,5 +12,6 @@
     ~/.bash_prompt: bash_prompt
     ~/.aliases: aliases
     ~/.gitconfig: gitconfig
+    ~/.zshrc: zshrc
 
 
