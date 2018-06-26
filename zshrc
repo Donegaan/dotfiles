@@ -62,6 +62,7 @@ plugins=(
   git
   osx
   copydir
+  python
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -99,6 +100,8 @@ alias gi="cd ~/GitHub"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
+alias python="python3"
+alias pip="pip3"
 
 PATH=$PATH:/usr/local
 export PATH
