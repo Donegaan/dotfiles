@@ -105,7 +105,8 @@ alias pip="pip3"
 
 PATH=$PATH:/usr/local
 export PATH
-export PATH=$PATH:~/Documents/python-scripts
+export PATH=$PATH:~/Documents/python-scripts:~/Library/Python/3.6/bin
+
 
 # Set NVM_DIR if it isn't already defined
 [[ -z "$NVM_DIR" ]] && export NVM_DIR="$HOME/.nvm"
