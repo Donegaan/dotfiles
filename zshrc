@@ -63,6 +63,8 @@ plugins=(
   osx
   copydir
   python
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -93,19 +95,32 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
 alias go="cd ~/Google\ Drive/"
+alias 4th="cd ~/Google\ Drive/4th\ Year"
+alias scal="cd ~/Google\ Drive/4th\ Year/Scalable"
+alias graph="cd ~/Google\ Drive/4th\ Year/Graphics"
+alias func="cd ~/Google\ Drive/4th\ Year/Func"
+alias ents="cd ~/Google\ Drive/4th\ Year/Entrepreneurship"
 alias gi="cd ~/GitHub"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
-alias python="python3"
-alias pip="pip3"
+# alias python="python3"
+# alias pip="pip3"
+alias path="echo $PATH"
 
-PATH=$PATH:/usr/local
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# PATH=$PATH:/usr/local
 export PATH
 export PATH=$PATH:~/Documents/python-scripts:~/Library/Python/3.6/bin
+export PATH=~/Library/Haskell/bin:$PATH
+export PATH=/Users/andrewdonegan/.local/bin:$PATH
+export PATH=/Users/andrewdonegan/Library/Python/2.7/bin:$PATH
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 
 # Set NVM_DIR if it isn't already defined
