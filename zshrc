@@ -2,12 +2,16 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/andrewdonegan/.oh-my-zsh"
-
+#export ZSH="/Users/andrewdonegan/.oh-my-zsh" #Mac
+export ZSH="/home/andy/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
+
+# Colours:
+#   Background: #282B34
+#   Text: #A8AEBB
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -99,10 +103,6 @@ alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias go="cd ~/Google\ Drive/"
 alias 4th="cd ~/Google\ Drive/4th\ Year"
-alias scal="cd ~/Google\ Drive/4th\ Year/Scalable"
-alias graph="cd ~/Google\ Drive/4th\ Year/Graphics"
-alias func="cd ~/Google\ Drive/4th\ Year/Func"
-alias ents="cd ~/Google\ Drive/4th\ Year/Entrepreneurship"
 alias gi="cd ~/GitHub"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"

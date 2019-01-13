@@ -14,5 +14,5 @@
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
     # VS Code
-    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
-    ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
+    $HOME/.config/Code/User/settings.json: vscode/settings.json
+    $HOME/.config/Code/User/keybindings.json: vscode/keybindings.json

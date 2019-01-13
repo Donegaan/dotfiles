@@ -6,18 +6,19 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 fi
 
 tput sgr0 # Colours
-LIGHTRED=$(tput setaf 9)
-RED=$(tput setaf 124);
-VIOLET=$(tput setaf 61);
-ORANGE=$(tput setaf 172)
-PURPLE=$(tput setaf 141)
-BLUE=$(tput setaf 33)
-CYAN=$(tput setaf 37)
-GREEN=$(tput setaf 64)
-YELLOW=$(tput setaf 136);
-WHITE=$(tput setaf 256)
-BOLD=$(tput bold)
-RESET=$(tput sgr0)
+lightred=$(tput setaf 9)
+red=$(tput setaf 124);
+Violet=$(tput setaf 61);
+orange=$(tput setaf 172)
+purple=$(tput setaf 141)
+blue=$(tput setaf 33)
+cyan=$(tput setaf 37)
+green=$(tput setaf 64)
+yellow=$(tput setaf 136);
+white=$(tput setaf 256)
+bold=$(tput bold)
+reset=$(tput sgr0)
+
 
 function git_info() {
 	# check if we're in a git repo
@@ -26,16 +27,16 @@ function git_info() {
 	branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
 	# check if it's dirty (via github.com/sindresorhus/pure)
 	dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "*")
-	echo $RESET" on "$LIGHTRED$branch$dirty
+	echo $RESET" on "$lightred$branch$dirty
 }
 
 # Only show username/host if not default
 function usernamehost() {
 	if [ "$SSH_TTY" ]; then
-		echo "${PURPLE}$USER@$HOSTNAME${RESET}:";
+		echo "${purple}$USER@$HOSTNAME${RESET}:";
 	fi
 }
 
-PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]\$(usernamehost)\[$CYAN\]\w\$(git_info)\[$RESET\]\n☈ "
+PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]\$(usernamehost)\[$cyan\]\w\$(git_info)\[$reset\]\n⚡ "
 
-#⩥৯☈
+#⩥৯☈➜ ⚡ 
