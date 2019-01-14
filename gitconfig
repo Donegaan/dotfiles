@@ -1,3 +1,5 @@
 [user]
 	name = donegaan
 	email = donegaan@tcd.ie
+[credential]
+	helper = cache
