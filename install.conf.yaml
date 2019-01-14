@@ -13,6 +13,7 @@
     ~/.aliases: aliases
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
+    ~/.inputrc: inputrc
     # VS Code
     $HOME/.config/Code/User/settings.json: vscode/settings.json
     $HOME/.config/Code/User/keybindings.json: vscode/keybindings.json
