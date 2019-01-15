@@ -1,7 +1,7 @@
 # Add `usr/local` to the `$PATH`
 PATH=$PATH:/usr/local
 export PATH
-export PATH=$PATH:~/Documents/python-scripts
+# export PATH=$PATH:~/Documents/python-scripts
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
