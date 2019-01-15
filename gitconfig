@@ -2,4 +2,4 @@
 	name = donegaan
 	email = donegaan@tcd.ie
 [credential]
-	helper = cache
+	helper = cache --timeout=18144000
