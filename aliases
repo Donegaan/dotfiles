@@ -51,6 +51,14 @@ alias gl="git log --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow
 # Easier navigation: .., ...
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
 
 # Python shortcuts
 alias python="python3"
+
+#Rails shortcuts
+alias rc="rails console"
+alias rt="rails test"
+alias rs="rails s"
