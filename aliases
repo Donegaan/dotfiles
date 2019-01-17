@@ -61,4 +61,4 @@ alias python="python3"
 #Rails shortcuts
 alias rc="rails console"
 alias rt="rails test"
-alias rs="rails s"
+alias rs="rails server"
