@@ -1,5 +1,5 @@
 [user]
 	name = donegaan
 	email = donegaan@tcd.ie
-[credential]
-	helper = cache --timeout=18144000
+[submodule]
+	recurse = true

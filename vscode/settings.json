@@ -12,7 +12,7 @@
     "editor.fontSize": 14,
     "terminal.integrated.fontSize": 13,
     "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "Fira Code Medium",
     "editor.fontLigatures": true,
     "workbench.statusBar.feedback.visible": false,
     "latex-workshop.message.update.show": false,

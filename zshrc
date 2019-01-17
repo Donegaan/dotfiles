@@ -10,10 +10,10 @@ export ZSH="/home/andy/.oh-my-zsh
 ZSH_THEME="spaceship"
 
 # Colours:
-#   Background: #282B34
+#   Background: #282B34, #282C34
 #   Text: #A8AEBB
 
-# Set list of themes to load
+# Set list of themes to loadp
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
 # looking in ~/.oh-my-zsh/themes/
