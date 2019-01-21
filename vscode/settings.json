@@ -1,5 +1,4 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
     "files.autoSave": "onFocusChange",
     "window.zoomLevel": 0,
     "files.associations": {
@@ -45,5 +44,7 @@
     "files.hotExit": "onExit",
     "explorer.openEditors.visible": 0,
     "workbench.colorTheme": "One Monokai",
-    "code-runner.saveFileBeforeRun": true
+    "code-runner.saveFileBeforeRun": true,
+    "terminal.integrated.fontFamily": "Fira Code Medium",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}"
 }
