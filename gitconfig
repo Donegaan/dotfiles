@@ -3,3 +3,21 @@
 	email = donegaan@tcd.ie
 [submodule]
 	recurse = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+	co = checkout
+	d = diff
+	cob = checkout -b
+	b = branch
+	p = push
+	pl = pull
+	cm = commit -m
+	c = commit
+	s = status
+	m = merge
+	log = log --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
