@@ -5,6 +5,9 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
 alias wk="cd ~/workspace"
+alias era="cd ~/workspace/EdgeRails"
+alias admf="cd ~/workspace/edgescan-admin-frontend"
+alias usrf="cd ~/workspace/edgescan-user-frontend"
 
 
 # Detect which `ls` flavor is in use

@@ -46,5 +46,6 @@
     "workbench.colorTheme": "One Monokai",
     "code-runner.saveFileBeforeRun": true,
     "terminal.integrated.fontFamily": "Fira Code Medium",
-    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}"
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+    "open-in-browser.default": "Firefox"
 }
