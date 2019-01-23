@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 #export ZSH="/Users/andrewdonegan/.oh-my-zsh" #Mac
-export ZSH="/home/andy/.oh-my-zsh
+export ZSH="/home/andrew/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -65,9 +65,13 @@ ENABLE_CORRECTION="true"
 plugins=(
   git
   osx
-  copydir
-  python
+  # copydir
+  # python
+  rails 
+  ruby
+  # terminitor
   zsh-autosuggestions
+  zsh-nvm
   zsh-syntax-highlighting
 )
 
@@ -102,11 +106,13 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias go="cd ~/Google\ Drive/"
-alias 4th="cd ~/Google\ Drive/4th\ Year"
 alias gi="cd ~/GitHub"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
+alias rc="rails console"
+alias rt="rails test"
+alias rs="rails server"
 # alias python="python3"
 # alias pip="pip3"
 alias path="echo $PATH"
@@ -114,18 +120,29 @@ alias path="echo $PATH"
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
+
+# edgescan aliases
+alias wk="cd ~/workspace"
+alias era="cd ~/workspace/EdgeRails"
+alias admf="cd ~/workspace/edgescan-admin-frontend"
+alias usrf="cd ~/workspace/edgescan-user-frontend"
+
+
 # PATH=$PATH:/usr/local
 export PATH
-export PATH=$PATH:~/Documents/python-scripts:~/Library/Python/3.6/bin
-export PATH=~/Library/Haskell/bin:$PATH
-export PATH=/Users/andrewdonegan/.local/bin:$PATH
-export PATH=/Users/andrewdonegan/Library/Python/2.7/bin:$PATH
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
+# export PATH=$PATH:~/Documents/python-scripts:~/Library/Python/3.6/bin
+# export PATH=~/Library/Haskell/bin:$PATH
+# export PATH=/Users/andrewdonegan/.local/bin:$PATH
+# export PATH=/Users/andrewdonegan/Library/Python/2.7/bin:$PATH
+# export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 
 # Set NVM_DIR if it isn't already defined
-[[ -z "$NVM_DIR" ]] && export NVM_DIR="$HOME/.nvm"
+# [[ -z "$NVM_DIR" ]] && export NVM_DIR="$HOME/.nvm"
 
 # Load nvm if it exists
-[[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+# [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"fpath=($fpath "/home/andrew/.zfunctions")
 
+  # Set Spaceship ZSH as a prompt
+  # autoload -U promptinit; promptinit
+  # prompt spaceship

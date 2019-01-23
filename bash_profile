@@ -1,7 +1,12 @@
 # Add `usr/local` to the `$PATH`
 PATH=$PATH:/usr/local
+export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH
 # export PATH=$PATH:~/Documents/python-scripts
+
+eval "$(rbenv init -)"
+
+source ~/.git-completion.bash
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
@@ -19,5 +24,3 @@ for file in ~/.{aliases,bash_prompt}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
-source ~/.git-completion.bash
