@@ -21,19 +21,19 @@
     "git.confirmSync": false,
     "todohighlight.keywords": [
         {
-            "text": "DEBUG:",
+            "text": "DEBUG",
             "color": "#000",
             "backgroundColor": "white",
             "isWholeLine": false,
         },
         {
-            "text": "TODO:",
+            "text": "TODO",
             "color": "white",
             "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
             "backgroundColor": "blue",
             //other styling properties goes here ... 
         },{
-            "text": "REVIEW:",
+            "text": "REVIEW",
             "color": "white",
             "backgroundColor": "orange"
         }
@@ -47,5 +47,11 @@
     "code-runner.saveFileBeforeRun": true,
     "terminal.integrated.fontFamily": "Fira Code Medium",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-    "open-in-browser.default": "Firefox"
+    "open-in-browser.default": "Firefox",
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "editor.rulers": [
+        100
+    ],
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false
 }

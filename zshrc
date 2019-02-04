@@ -70,6 +70,7 @@ plugins=(
   rails 
   ruby
   # terminitor
+  you-should-use
   zsh-autosuggestions
   zsh-nvm
   zsh-syntax-highlighting
@@ -113,6 +114,7 @@ alias doc="cd ~/Documents"
 alias rc="rails console"
 alias rt="rails test"
 alias rs="rails server"
+alias sk="sidekiq"
 # alias python="python3"
 # alias pip="pip3"
 alias path="echo $PATH"
@@ -129,7 +131,9 @@ alias usrf="cd ~/workspace/edgescan-user-frontend"
 
 
 # PATH=$PATH:/usr/local
-export PATH
+# export PATH
+export PATH="$PATH:/usr/bin:/usr/local/bin/"
+
 # export PATH=$PATH:~/Documents/python-scripts:~/Library/Python/3.6/bin
 # export PATH=~/Library/Haskell/bin:$PATH
 # export PATH=/Users/andrewdonegan/.local/bin:$PATH
@@ -142,7 +146,7 @@ export PATH
 
 # Load nvm if it exists
 # [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"fpath=($fpath "/home/andrew/.zfunctions")
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
-  # Set Spaceship ZSH as a prompt
-  # autoload -U promptinit; promptinit
-  # prompt spaceship
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
