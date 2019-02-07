@@ -25,5 +25,9 @@
         "key": "ctrl+shift+t",
         "command": "-extension.goToSpec",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+d",
+        "command": "editor.action.addSelectionToPreviousFindMatch"
     }
 ]
