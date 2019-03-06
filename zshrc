@@ -128,6 +128,7 @@ alias wk="cd ~/workspace"
 alias era="cd ~/workspace/EdgeRails"
 alias admf="cd ~/workspace/edgescan-admin-frontend"
 alias usrf="cd ~/workspace/edgescan-user-frontend"
+alias lock='gnome-screensaver-command -l'
 
 
 # PATH=$PATH:/usr/local

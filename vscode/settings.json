@@ -43,7 +43,6 @@
     "editor.cursorStyle": "line",
     "files.hotExit": "onExit",
     "explorer.openEditors.visible": 0,
-    "workbench.colorTheme": "One Monokai",
     "code-runner.saveFileBeforeRun": true,
     "terminal.integrated.fontFamily": "Fira Code Medium",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
@@ -53,5 +52,15 @@
         100
     ],
     "editor.tabSize": 2,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "One Monokai",
+    "editor.tokenColorCustomizations": {
+        "[One Monokai 80s]": {
+            "strings": "#D6C260"
+        }
+    },
+    "gitHistory.hideCommitViewExplorer": true,
+    "gitlens.advanced.fileHistoryFollowsRenames": false,
+    "gitlens.blame.avatars": false,
+    "gitlens.blame.ignoreWhitespace": true
 }
