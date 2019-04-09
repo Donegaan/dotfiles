@@ -53,7 +53,6 @@
     ],
     "editor.tabSize": 2,
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "One Monokai",
     "editor.tokenColorCustomizations": {
         "[One Monokai 80s]": {
             "strings": "#D6C260"
@@ -62,5 +61,15 @@
     "gitHistory.hideCommitViewExplorer": true,
     "gitlens.advanced.fileHistoryFollowsRenames": false,
     "gitlens.blame.avatars": false,
-    "gitlens.blame.ignoreWhitespace": true
+    "gitlens.blame.ignoreWhitespace": true,
+    "eslint.packageManager": "yarn",
+    "window.titleBarStyle": "custom",
+    "window.restoreWindows": "all",
+    "telemetry.enableCrashReporter": false,
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Horizon",
+    "files.trimTrailingWhitespace": true,
+    "solargraph.commandPath": "/home/andrew/.rbenv/shims/solargraph",
+    "ruby.rubocop.executePath": "/home/andrew/.rbenv/shims/",
+    "prettier.printWidth": 100
 }

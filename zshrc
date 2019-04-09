@@ -127,6 +127,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias wk="cd ~/workspace"
 alias era="cd ~/workspace/EdgeRails"
 alias admf="cd ~/workspace/edgescan-admin-frontend"
+alias adm2="cd ~/workspace/edgescan-admin-frontend-v2"
 alias usrf="cd ~/workspace/edgescan-user-frontend"
 alias lock='gnome-screensaver-command -l'
 
@@ -147,7 +148,9 @@ export PATH="$PATH:/usr/bin:/usr/local/bin/"
 
 # Load nvm if it exists
 # [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"fpath=($fpath "/home/andrew/.zfunctions")
+
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(rbenv init -)"

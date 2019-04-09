@@ -1,10 +1,7 @@
 # Add `usr/local` to the `$PATH`
 PATH=$PATH:/usr/local
-export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH
 # export PATH=$PATH:~/Documents/python-scripts
-
-eval "$(rbenv init -)"
 
 source ~/.git-completion.bash
 
