@@ -94,5 +94,3 @@ export PATH=/Users/andrewdonegan/.local/bin:$PATH
 # export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-neofetch
