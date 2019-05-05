@@ -12,7 +12,7 @@
     ~/.bash_prompt: bash_prompt
     ~/.aliases: aliases
     ~/.gitconfig: gitconfig
-    ~/.zshrc: zshrc
+    ~/.zshrc: zshrc_mac
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
     ~/.git-completion.bash: git_completion
