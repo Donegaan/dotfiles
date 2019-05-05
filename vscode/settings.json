@@ -6,7 +6,8 @@
         "bash_prompt": "shellscript",
         "bash_profile": "shellscript",
         "aliases": "shellscript",
-        "bashrc": "shellscript"
+        "bashrc": "shellscript",
+        "zshrc": "shellscript"
     },
     "editor.fontSize": 14,
     "terminal.integrated.fontSize": 13,
