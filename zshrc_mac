@@ -91,7 +91,7 @@ export PATH
 # export PATH=~/Library/Haskell/bin:$PATH
 export PATH=/Users/andrewdonegan/.local/bin:$PATH
 # export PATH=/Users/andrewdonegan/Library/Python/2.7/bin:$PATH
-# export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
