@@ -1,76 +1,78 @@
 {
-    "files.autoSave": "onFocusChange",
-    "window.zoomLevel": 0,
-    "files.associations": {
-        "*.pl": "prolog",
-        "bash_prompt": "shellscript",
-        "bash_profile": "shellscript",
-        "aliases": "shellscript",
-        "bashrc": "shellscript",
-        "zshrc": "shellscript"
+  "files.autoSave": "onFocusChange",
+  "window.zoomLevel": 0,
+  "files.associations": {
+    "bash_prompt": "shellscript",
+    "bash_profile": "shellscript",
+    "aliases": "shellscript",
+    "bashrc": "shellscript",
+    "zshrc": "shellscript"
+  },
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 13,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "workbench.statusBar.feedback.visible": false,
+  "latex-workshop.message.update.show": false,
+  "terminal.integrated.cursorStyle": "line",
+  "code-runner.runInTerminal": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "git.confirmSync": false,
+  "todohighlight.keywords": [
+    {
+      "text": "DEBUG",
+      "color": "#000",
+      "backgroundColor": "white",
+      "isWholeLine": false
     },
-    "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 13,
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "Fira Code Medium",
-    "editor.fontLigatures": true,
-    "workbench.statusBar.feedback.visible": false,
-    "latex-workshop.message.update.show": false,
-    "terminal.integrated.cursorStyle": "line",
-    "code-runner.runInTerminal": true,
-    "latex-workshop.view.pdf.viewer": "tab",
-    "git.confirmSync": false,
-    "todohighlight.keywords": [
-        {
-            "text": "DEBUG",
-            "color": "#000",
-            "backgroundColor": "white",
-            "isWholeLine": false,
-        },
-        {
-            "text": "TODO",
-            "color": "white",
-            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
-            "backgroundColor": "blue",
-            //other styling properties goes here ... 
-        },{
-            "text": "REVIEW",
-            "color": "white",
-            "backgroundColor": "orange"
-        }
-    ],
-    "git.enableSmartCommit": true,
-    "editor.cursorBlinking": "phase",
-    "editor.cursorStyle": "line",
-    "files.hotExit": "onExit",
-    "explorer.openEditors.visible": 0,
-    "code-runner.saveFileBeforeRun": true,
-    "terminal.integrated.fontFamily": "Fira Code Medium",
-    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-    "open-in-browser.default": "Firefox",
-    "terminal.integrated.shell.linux": "/bin/zsh",
-    "editor.rulers": [
-        100
-    ],
-    "editor.tabSize": 2,
-    "editor.minimap.enabled": false,
-    "editor.tokenColorCustomizations": {
-        "[One Monokai 80s]": {
-            "strings": "#D6C260"
-        }
+    {
+      "text": "TODO",
+      "color": "white",
+      "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+      "backgroundColor": "blue"
+      //other styling properties goes here ...
     },
-    "gitHistory.hideCommitViewExplorer": true,
-    "gitlens.advanced.fileHistoryFollowsRenames": false,
-    "gitlens.blame.avatars": false,
-    "gitlens.blame.ignoreWhitespace": true,
-    "eslint.packageManager": "yarn",
-    "window.titleBarStyle": "custom",
-    "window.restoreWindows": "all",
-    "telemetry.enableCrashReporter": false,
-    "editor.formatOnSave": true,
-    "workbench.colorTheme": "Horizon",
-    "files.trimTrailingWhitespace": true,
-    "solargraph.commandPath": "/home/andrew/.rbenv/shims/solargraph",
-    "ruby.rubocop.executePath": "/home/andrew/.rbenv/shims/",
-    "prettier.printWidth": 100
+    {
+      "text": "REVIEW",
+      "color": "white",
+      "backgroundColor": "orange"
+    }
+  ],
+  "git.enableSmartCommit": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "line",
+  "files.hotExit": "onExit",
+  "explorer.openEditors.visible": 0,
+  "code-runner.saveFileBeforeRun": true,
+  "terminal.integrated.fontFamily": "Fira Code",
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "open-in-browser.default": "Firefox",
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "editor.rulers": [100],
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.tokenColorCustomizations": {
+    "[One Monokai 80s]": {
+      "strings": "#D6C260"
+    }
+  },
+  "gitHistory.hideCommitViewExplorer": true,
+  "gitlens.advanced.fileHistoryFollowsRenames": false,
+  "gitlens.blame.avatars": false,
+  "gitlens.blame.ignoreWhitespace": true,
+  "eslint.packageManager": "yarn",
+  "window.titleBarStyle": "custom",
+  "window.restoreWindows": "all",
+  "telemetry.enableCrashReporter": false,
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Horizon",
+  "files.trimTrailingWhitespace": true,
+  "solargraph.commandPath": "/home/andrew/.rbenv/shims/solargraph",
+  "ruby.rubocop.executePath": "/home/andrew/.rbenv/shims/",
+  "prettier.printWidth": 100,
+  "git.autofetch": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
