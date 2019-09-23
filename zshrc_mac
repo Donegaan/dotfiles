@@ -8,6 +8,8 @@ export ZSH="/Users/andrewdonegan/.oh-my-zsh" #Mac
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+
 # Colours:
 #   Background: #282B34, #282C34
 #   Text: #A8AEBB
@@ -64,9 +66,9 @@ alias rc="rails console"
 alias rt="rails test"
 alias rs="rails server"
 alias sk="sidekiq"
-alias dot="code ~/.dotfiles"
-alias python="python3"
-alias pip="pip3"
+alias dot="code ~/dotfiles"
+alias python="python2.7"
+#alias pip="pip3"
 alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
 
 # Lock the screen (when going AFK)
@@ -80,9 +82,13 @@ export PATH
 export PATH=/Users/andrewdonegan/.local/bin:$PATH
 # export PATH=/Users/andrewdonegan/Library/Python/2.7/bin:$PATH
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/opt/local/bin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-eval "$(rbenv init -)"
