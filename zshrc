@@ -1,12 +1,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/andrewdonegan/.oh-my-zsh" #Mac
-# export ZSH="/home/andrew/.oh-my-zsh"
+# export ZSH="/Users/andrewdonegan/.oh-my-zsh" #Mac
+export ZSH="/home/andrew/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Colours:
 #   Background: #282B34, #282C34
@@ -57,22 +57,24 @@ ENABLE_CORRECTION="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+([[ -f "$HOME/.fzf.zsh" ]] || (git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install)) && source "$HOME/.fzf.zsh"
+
+([[ -f "$HOME/.cache/z.lua" ]] || (cd ~/.cache && curl -fsSLO https://raw.githubusercontent.com/skywind3000/z.lua/master/z.lua)) && eval "$(lua ~/.cache/z.lua --init zsh once enhanced fzf)"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  osx
   # copydir
   # python
-  rails 
+  rails
   ruby
-  # terminitor
   you-should-use
   zsh-autosuggestions
   zsh-nvm
-  zsh-syntax-highlighting
+  fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,11 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
-alias go="cd ~/Google\ Drive/"
-alias gi="cd ~/GitHub"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias doc="cd ~/Documents"
+alias x="z -I"
 alias rc="rails console"
 alias rt="rails test"
 alias rs="rails server"
@@ -118,10 +116,6 @@ alias dot="code ~/.dotfiles"
 # alias python="python3"
 # alias pip="pip3"
 alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
-
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 
 # edgescan aliases
 alias wk="cd ~/workspace"
