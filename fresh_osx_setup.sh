@@ -67,17 +67,11 @@ brew install vim
 open -a iTerm
 
 # Set up iTerm2
-#
-# Load preferences from folder (choose: ~/.dotfiles)
-# Install Menlo for Powerline (from ~/.dotfiles/fonts/)
 
-# Download and import iTerm colors
-git clone https://github.com/mbadolato/iTerm2-Color-Schemes ~/Desktop/iTerm2-Color-Schemes
-open ~/Desktop/iTerm2-Color-Schemes/schemes/
-# Import whichever you'd like by selecting and pressing Cmd + O
-
-# Use iTerm2 settings file by going to preferences and selecting to load
-# preferences from a folder: ~/.dotfiles
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm_profile"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # Install ruby
 brew install rbenv
@@ -114,82 +108,56 @@ brew install wget
 # TODO install Xcode using script
 sudo xcodebuild -license
 
+# VSCode
+#   - Settings Sync
+open vscode:extension/Shan.code-settings-sync
 
+p10k configure
 # GUI Settings
 # TODO: Automate this
 
 # System Preferences
 #   - General
 #     - Use dark menubar and doc
+#     - Default Browser: Firefox
 #   - Desktop & Screen Saver
 #     - Desktop
-#       - Source: Pokemon
-#         - Change picture: when logging in
+#       - Source: Google Drive
 #     - Screen Saver
-#       - Classic
-#         - Source: Pokemon
-#         - Shuffle slide order
-#       - Hot Corners...
-#         - Bottom left: Start Screen Saver
+#       - Aerial: https://github.com/JohnCoates/Aerial
 #   - Dock
+#     - Minimize: Scale effect
 #     - Automatically hide and show the dock
+#     - Don't show recent apps in dock
 #   - Mission Control
-#     - no Automatically rearrange spaces based on recent use
-#     - Dashboard: As Space
-#   - if on MacBook Pro:
-#     - Display
-#       - Display
-#         - Looks like 1680 x 1050
+#     - Dashboard: As Space?
+#   - Sec & Priv
+#     - General
+#       - Password immediately
+#       - Allow for app store and identified devs
+#     - FileVault / Firewall ON
 #   - Trackpad
 #     - Point & Click
-#       - Tap to click
+#       - No lookup with 3 fingers
+#       - Secondary click
+#     - More Gestures
+#       - All except App Exposé
 #   - Date & Time
 #     - Clock
 #       - Show date
-#   - Accessibility
-#     - Zoom
-#       - Use scroll gesture with modifier keys to zoom
-#       - Unckeck "Smooth images"
-#     - Trackpad Options...
-#       - Enable dragging
-#     - Display
-#       - Unckeck "Shake mouse pointer to locate"
-#   - Sound
-#     - Sound Effects
-#       - Play feedback when volume is changed
 #   - Keyboard
 #     - Keyboard
 #       - Key repeat
-#         - Fast
+#         - 1 from Fast
 #       - Delay until repeat
-#         - Short
+#         - 3 from left
 #       - Touch Bar shows: Expanded Control Strip
-#       - Modifier Keys...
-#         - Swap Caps to Ctrl
-#       - Show keyboard and emoji viewers in menu bar
+#     - Services
+#       - Start Screen Saver (for aerial) - need automator script for this
 #     - Shortcuts
-#       - Mission Control
-#         - Mission Control
-#           - Move left a space: Option + Shift + [
-#           - Move right a space: Option + Shift + ]
 #       - Spotlight
 #         - Show Spotlight search: Ctrl + Space
 #           - Don't forget to install alfred and change to Command + Space
-#       - Accessibility
-#         - Invert colors
-#       - App Shortcuts
-#         - Google Chrome.app
-#           - Add
-#             - "Select Next Tab"
-#             - Cmd + Option + ]
-#             - "Select Previous Tab"
-#             - Cmd + Option + [
-#         - Sketch.app
-#           - Add
-#             - "ArtboardZoom - Zoom to selected Artboard"
-#             - Ctrl + Space
-#             - "Show Smart Guides"
-#             - Cmd + R
 
 # Alfred
 #   - General
@@ -197,9 +165,10 @@ sudo xcodebuild -license
 #       - Command + Space
 #   - Appearance
 #     - Theme
-#       - OS X Yosemite Dark
+#       - Alfred macOS Dark
 #     - Options
 #       - Hide hat on Alfred window
+#       - Hide menu bar icon
 
 # Desktop
 #   - Sort By
@@ -216,37 +185,42 @@ sudo xcodebuild -license
 # Finder
 #   - General
 #     - New Finder windows show
-#       - $HOME
+#       - $HOME or Google Drive?
 #   - Advanced
 #     - Show all filename extensions
 #     - no Show warning before changing an extension
 #   - Favorites
-#     - Desktop
-#     - Documents
-#     - Dropbox
-#     - Screenshots
 #     - Applications
+#     - Desktop
+#     - Downloads
+#     - Documents
+#     - Google Drive
+#     - GitHub
 #     - Home
+#     - AirDrop
 #   - Sort By:
-#     - View > [hold Option] Sort by ... > Name
-
-# Downloads
-#   - Remove Downloads, symlink to Desktop
-
-# Chrome
-#
-# - Setting up personal laptop?
-#   - Sign into personal Chrome. Done.
-# - Setting up work laptop?
-#   - Copy these from personal account:
-#     - chrome://settings
-#     - chrome://extensions
-#     - Enable keyboard shortcuts for Inbox
-#     - Vimium settings
-#     - Stylebot settings
+#     - View > [hold Option] Sort by ... > Name (⌃⌥⌘1)
+#   - Add iterm and Code icons for folders to be dragged to.
 
 # Messages
 #
 # - Add iCloud account
 # - Be sure to sync contacts
 # - Google when you need help
+
+# Dock - From left to right
+# - Finder
+# - Launchpad
+# - Firefox
+# - Reminders
+# - Messages
+# - Signal
+# - App Store
+# - Xcode
+# - VSCode
+# - Spotify
+# - iTerm
+# - Settings
+# - Vertical Bar
+# - Downloads
+# - Bin
