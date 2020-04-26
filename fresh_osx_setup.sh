@@ -8,28 +8,26 @@
 # It has yet to be tested, though it is an accurate transcription of          #
 # I just ran when setting up my OS X installation after a clean re-install.   #
 #                                                                             #
-# You may want to run the individual commands manually, instead of as a       #
-# script. In fact, in it's current state, it calls `exit` halfway through     #
-# and doesn't finish.                                                         #
-#                                                                             #
-# TODO:                                                                       #
-#   - Utilize Homebrew Cask to install actual apps.                           #
 #                                                                             #
 # =========================================================================== #
 
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # Install Xcode tools
 xcode-select --install
-# Note: MacVim (and possibly smlnj I'm not quite sure) require a full-blown
-# Xcode installation to work
 
 # Install and set up Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew doctor
 brew update
-
-# Set up PATH until we clone our dotfiles
-# Not necessary on OS X 10.10 (Yosemite)
-export PATH="/usr/local/bin:$PATH"
 
 # Install iTerm2
 brew cask install iterm2
@@ -55,29 +53,19 @@ brew install vim
 # Set up dotfiles
 ./install
 
-# Set up host-specific (git, sh, zsh, etc.)
-# The best way to do this is to look at MacBook Air, Dropbox, & Stripe manually
-# Files you'll almost certainly need in some form:
-#   gitignore, gitconfig, host.sh, host.zsh
-# You may also want to look at:
-#   ssh/config
-
-
-# Now that dotfiles have been installed, open iTerm2
-open -a iTerm
-
 # Set up iTerm2
 
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm_profile"
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Install ruby
 brew install rbenv
 brew install ruby-build
 echo "rbenv is installed."
-
 
 # Other utilities
 brew cask install alfred
@@ -93,28 +81,18 @@ brew cask install vlc
 # brew cask install amethyst
 brew cask install visual-studio-code
 brew cask install flux
-
-# Install python
-brew install python
-brew install python3
-
-# Install node
-brew install node
+brew cask install font-fira-code
 
 # Helper utilities
 brew install wget
 
-# After installing Xcode
-# TODO install Xcode using script
-sudo xcodebuild -license
+# OS Settings
 
-# VSCode
-#   - Settings Sync
-open vscode:extension/Shan.code-settings-sync
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
 
-p10k configure
 # GUI Settings
-# TODO: Automate this
+# TODO: Automate this, think lots of defaults write commands are needed
 
 # System Preferences
 #   - General
@@ -125,10 +103,19 @@ p10k configure
 #       - Source: Google Drive
 #     - Screen Saver
 #       - Aerial: https://github.com/JohnCoates/Aerial
-#   - Dock
-#     - Minimize: Scale effect
-#     - Automatically hide and show the dock
-#     - Don't show recent apps in dock
+
+# Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
+
+# Automatically hide and show the dock
+defaults write com.apple.dock autohide -bool true
+
+# Make Dock icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool true
+
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
+
 #   - Mission Control
 #     - Dashboard: As Space?
 #   - Sec & Priv
@@ -170,9 +157,10 @@ p10k configure
 #       - Hide hat on Alfred window
 #       - Hide menu bar icon
 
-# Desktop
-#   - Sort By
-#     - Snap to Grid
+# Enable snap-to-grid for icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # Menu Bar
 #   - Battery Icon
@@ -188,7 +176,8 @@ p10k configure
 #       - $HOME or Google Drive?
 #   - Advanced
 #     - Show all filename extensions
-#     - no Show warning before changing an extension
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 #   - Favorites
 #     - Applications
 #     - Desktop
@@ -201,6 +190,18 @@ p10k configure
 #   - Sort By:
 #     - View > [hold Option] Sort by ... > Name (⌃⌥⌘1)
 #   - Add iterm and Code icons for folders to be dragged to.
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `glyv`
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # Messages
 #
@@ -224,3 +225,53 @@ p10k configure
 # - Vertical Bar
 # - Downloads
 # - Bin
+
+###############################################################################
+# Mac App Store                                                               #
+###############################################################################
+
+
+# Enable the automatic update check
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Download newly available updates in background
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+
+# Install System data files & security updates
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+
+# Turn on app auto-update
+defaults write com.apple.commerce AutoUpdate -bool true
+
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
+
+for app in "Activity Monitor" \
+	"Address Book" \
+	"Calendar" \
+	"cfprefsd" \
+	"Contacts" \
+	"Dock" \
+	"Finder" \
+	"Google Chrome" \
+	"SystemUIServer" \
+	"Terminal"; do
+	killall "${app}" &> /dev/null
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+echo "Set lock text: defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText \"<message>\""
+
+# VSCode
+#   - Settings Sync
+open vscode:extension/Shan.code-settings-sync
+
+# Now that dotfiles have been installed, open iTerm2
+open -a iTerm
+
+p10k configure
