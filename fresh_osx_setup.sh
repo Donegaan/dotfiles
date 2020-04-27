@@ -50,6 +50,9 @@ brew install coreutils
 # Install newest vim
 brew install vim
 
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Set up dotfiles
 ./install
 
@@ -81,6 +84,7 @@ brew cask install vlc
 # brew cask install amethyst
 brew cask install visual-studio-code
 brew cask install flux
+brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 
 # Helper utilities
@@ -109,6 +113,9 @@ defaults write com.apple.dock mineffect -string "scale"
 
 # Automatically hide and show the dock
 defaults write com.apple.dock autohide -bool true
+
+# Set time for dock to appear to be 0.1 so its quick but not jarring
+defaults write com.apple.dock autohide-time-modifier -float 0.12
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -174,10 +181,12 @@ defaults write com.apple.dock show-recents -bool false
 #   - General
 #     - New Finder windows show
 #       - $HOME or Google Drive?
-#   - Advanced
-#     - Show all filename extensions
+
+# Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 #   - Favorites
 #     - Applications
 #     - Desktop
@@ -191,7 +200,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 #     - View > [hold Option] Sort by ... > Name (⌃⌥⌘1)
 #   - Add iterm and Code icons for folders to be dragged to.
 
-# Use list view in all Finder windows by default
+# Use column view in all Finder windows by default. Icon, List, Column, Gallery
 # Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `glyv`
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
@@ -246,25 +255,6 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
 
-
-###############################################################################
-# Kill affected applications                                                  #
-###############################################################################
-
-for app in "Activity Monitor" \
-	"Address Book" \
-	"Calendar" \
-	"cfprefsd" \
-	"Contacts" \
-	"Dock" \
-	"Finder" \
-	"Google Chrome" \
-	"SystemUIServer" \
-	"Terminal"; do
-	killall "${app}" &> /dev/null
-done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
-
 echo "Set lock text: defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText \"<message>\""
 
 # VSCode
@@ -274,4 +264,6 @@ open vscode:extension/Shan.code-settings-sync
 # Now that dotfiles have been installed, open iTerm2
 open -a iTerm
 
-p10k configure
+echo "run p10k configure in iTerm2"
+
+echo "Done. Restart for changes to take effect."
