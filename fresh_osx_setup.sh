@@ -184,6 +184,19 @@ sudo pmset -b sleep 5
 # Finder                                                                      #
 ###############################################################################
 
+#   - Favorites
+#     - Applications
+#     - Desktop
+#     - Downloads
+#     - Documents
+#     - Google Drive
+#     - GitHub
+#     - Home
+#     - AirDrop
+#   - Sort By:
+#     - View > [hold Option] Sort by ... > Name (⌃⌥⌘1)
+#   - Add iterm and Code icons for folders to be dragged to.
+
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
 # Might want to change this to Google Docs or $HOME
@@ -239,41 +252,11 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
-#   - Favorites
-#     - Applications
-#     - Desktop
-#     - Downloads
-#     - Documents
-#     - Google Drive
-#     - GitHub
-#     - Home
-#     - AirDrop
-#   - Sort By:
-#     - View > [hold Option] Sort by ... > Name (⌃⌥⌘1)
-#   - Add iterm and Code icons for folders to be dragged to.
-
 # Messages
 #
 # - Add iCloud account
 # - Be sure to sync contacts
 # - Google when you need help
-
-# Dock - From left to right
-# - Finder
-# - Launchpad
-# - Firefox
-# - Reminders
-# - Messages
-# - Signal
-# - App Store
-# - Xcode
-# - VSCode
-# - Spotify
-# - iTerm
-# - Settings
-# - Vertical Bar
-# - Downloads
-# - Bin
 
 ###############################################################################
 # Mac App Store                                                               #
