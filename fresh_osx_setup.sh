@@ -18,7 +18,7 @@ osascript -e 'tell application "System Preferences" to quit'
 # Ask for the administrator password upfront
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+# Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Xcode tools
@@ -32,9 +32,6 @@ brew update
 # Install iTerm2
 brew cask install iterm2
 
-# Install and setup git
-brew install git
-
 # Install newest bash and zsh and make zsh the login shell
 brew install bash
 brew install bash-completion
@@ -45,7 +42,6 @@ chsh -s "$(brew --prefix)/bin/zsh"
 
 # Install gnu coreutils
 brew install coreutils
-# Note: my bash_profile allows these commands to be run without prefixes
 
 # Install newest vim
 brew install vim
@@ -55,15 +51,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Set up dotfiles
 ./install
-
-# Set up iTerm2
-
-# Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm_profile"
-# Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Install ruby
 brew install rbenv
@@ -108,13 +95,17 @@ sudo nvram SystemAudioVolume=" "
 #     - Screen Saver
 #       - Aerial: https://github.com/JohnCoates/Aerial
 
+###############################################################################
+# Dock, Dashboard, and hot corners                                            #
+###############################################################################
+
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "scale"
 
 # Automatically hide and show the dock
 defaults write com.apple.dock autohide -bool true
 
-# Set time for dock to appear to be 0.1 so its quick but not jarring
+# Set time for dock to appear to be 0.12 so its quicker than default but not jarring
 defaults write com.apple.dock autohide-time-modifier -float 0.12
 
 # Make Dock icons of hidden applications translucent
@@ -123,11 +114,20 @@ defaults write com.apple.dock showhidden -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
-#   - Mission Control
-#     - Dashboard: As Space?
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use the Dock to launch apps.
+defaults write com.apple.dock persistent-apps -array
+
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
 #   - Sec & Priv
 #     - General
-#       - Password immediately
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
 #       - Allow for app store and identified devs
 #     - FileVault / Firewall ON
 #   - Trackpad
@@ -153,6 +153,9 @@ defaults write com.apple.dock show-recents -bool false
 #         - Show Spotlight search: Ctrl + Space
 #           - Don't forget to install alfred and change to Command + Space
 
+# Set machine sleep to 5 minutes on battery
+sudo pmset -b sleep 5
+
 # Alfred
 #   - General
 #     - Alfred Hotkey
@@ -177,15 +180,64 @@ defaults write com.apple.dock show-recents -bool false
 #   - View
 #     - Uncheck "Right sidebar"
 
-# Finder
-#   - General
-#     - New Finder windows show
-#       - $HOME or Google Drive?
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Set Desktop as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+# Might want to change this to Google Docs or $HOME
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
 
 # Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Enable spring loading for directories
+defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+
+# Set low spring loading delay for directories
+defaults write NSGlobalDomain com.apple.springing.delay -float 0.2
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Show the ~/Library folder
+chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+
+# Use column view in all Finder windows by default. Icon, List, Column, Gallery
+# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `glyv`
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+
+###############################################################################
+# iTerm2                                                                      #
+###############################################################################
+
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm_profile"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 #   - Favorites
 #     - Applications
@@ -199,18 +251,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 #   - Sort By:
 #     - View > [hold Option] Sort by ... > Name (⌃⌥⌘1)
 #   - Add iterm and Code icons for folders to be dragged to.
-
-# Use column view in all Finder windows by default. Icon, List, Column, Gallery
-# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `glyv`
-defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
-
-# Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-
-# Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # Messages
 #
@@ -254,6 +294,10 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
+
+###############################################################################
+# Finishing up                                                                #
+###############################################################################
 
 echo "Set lock text: defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText \"<message>\""
 
