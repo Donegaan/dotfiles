@@ -49,6 +49,12 @@ brew install vim
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zdharma/fast-syntax-highlighting.git \
+  ~ZSH_CUSTOM/plugins/fast-syntax-highlighting
+
 # Set up dotfiles
 ./install
 
@@ -78,6 +84,17 @@ brew cask install font-fira-code
 brew install wget
 
 # OS Settings
+
+read -p "Sign into Google Drive and then press Y to continue installing " -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
+fi
+
+git clone https://github.com/clintmod/macprefs.git
+export MACPREFS_BACKUP_DIR="$HOME/Google Drive/macprefs"
+./macprefs/macprefs restore
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
