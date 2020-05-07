@@ -65,7 +65,6 @@ echo "rbenv is installed."
 
 # Other utilities
 brew cask install alfred
-brew cask alfred
 brew cask install google-chrome
 brew cask install google-backup-and-sync
 brew cask install firefox
@@ -79,6 +78,8 @@ brew cask install visual-studio-code
 brew cask install flux
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
+brew cask install rectangle
+brew cask install aerial
 
 # Helper utilities
 brew install wget
@@ -92,6 +93,7 @@ then
     [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
 fi
 
+echo "Applying macprefs from Google Drive"
 git clone https://github.com/clintmod/macprefs.git
 export MACPREFS_BACKUP_DIR="$HOME/Google Drive/macprefs"
 ./macprefs/macprefs restore
@@ -99,18 +101,24 @@ export MACPREFS_BACKUP_DIR="$HOME/Google Drive/macprefs"
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+read -p "Check settings for macprefs changes, if it didn't work, press Y to continue and use other commands " -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
+fi
+
 # GUI Settings
 # TODO: Automate this, think lots of defaults write commands are needed
 
 # System Preferences
 #   - General
-#     - Use dark menubar and doc
+# Dark mode
+osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 #     - Default Browser: Firefox
 #   - Desktop & Screen Saver
 #     - Desktop
 #       - Source: Google Drive
-#     - Screen Saver
-#       - Aerial: https://github.com/JohnCoates/Aerial
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -145,7 +153,7 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-#       - Allow for app store and identified devs
+#       - Allow from app store and identified devs
 #     - FileVault / Firewall ON
 #   - Trackpad
 #     - Point & Click
@@ -162,12 +170,13 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 #         - 1 from Fast
 #       - Delay until repeat
 #         - 3 from left
-#       - Touch Bar shows: Expanded Control Strip
 #     - Services
 #       - Start Screen Saver (for aerial) - need automator script for this
 #     - Shortcuts
+#       - Mission Control
+#         - Move left and right with ctrl + arrow
 #       - Spotlight
-#         - Show Spotlight search: Ctrl + Space
+#         - Show Spotlight search: alt + Space
 #           - Don't forget to install alfred and change to Command + Space
 
 # Set machine sleep to 5 minutes on battery
@@ -177,12 +186,15 @@ sudo pmset -b sleep 5
 #   - General
 #     - Alfred Hotkey
 #       - Command + Space
+#   - Features
+#     - Default Results
+#       - Extras: Folders, Documents, Text Files
 #   - Appearance
 #     - Theme
 #       - Alfred macOS Dark
 #     - Options
 #       - Hide hat on Alfred window
-#       - Hide menu bar icon
+#       - Show on active screen
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
