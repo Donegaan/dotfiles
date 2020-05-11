@@ -111,14 +111,8 @@ fi
 # GUI Settings
 # TODO: Automate this, think lots of defaults write commands are needed
 
-# System Preferences
-#   - General
 # Dark mode
 osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
-#     - Default Browser: Firefox
-#   - Desktop & Screen Saver
-#     - Desktop
-#       - Source: Google Drive
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -201,14 +195,6 @@ sudo pmset -b sleep 5
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
-# Menu Bar
-#   - Battery Icon
-#     - Show Percentage
-
-# Spotify
-#   - View
-#     - Uncheck "Right sidebar"
-
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
@@ -224,7 +210,7 @@ sudo pmset -b sleep 5
 #     - AirDrop
 #   - Sort By:
 #     - View > [hold Option] Sort by ... > Name (⌃⌥⌘1)
-#   - Add iterm and Code icons for folders to be dragged to.
+#   - Add iterm and Code icons for folders to be dragged to. (Hold cmd plus drag app icon to finder bar)
 
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
@@ -281,12 +267,6 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
-# Messages
-#
-# - Add iCloud account
-# - Be sure to sync contacts
-# - Google when you need help
-
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
@@ -317,9 +297,13 @@ echo "Set lock text: defaults write /Library/Preferences/com.apple.loginwindow L
 #   - Settings Sync
 open vscode:extension/Shan.code-settings-sync
 
-# Now that dotfiles have been installed, open iTerm2
+# Now that dotfiles have been installed, open installed apps to be configured
 open -a iTerm
+open -a Firefox
+open -a Rectangle
+open -a Signal
+open -a Spotify
+open -a Flux
+open -a Backup\ and\ Sync
 
-echo "run p10k configure in iTerm2"
-
-echo "Done. Restart for changes to take effect."
+echo "run p10k configure in iTerm2 then restart for changes to take effect."
