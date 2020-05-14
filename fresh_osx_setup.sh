@@ -22,7 +22,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Xcode tools
-xcode-select --install
+# xcode-select --install
 
 # Install and set up Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -110,9 +110,6 @@ fi
 
 # GUI Settings
 # TODO: Automate this, think lots of defaults write commands are needed
-
-# Dark mode
-osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
