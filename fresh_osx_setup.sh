@@ -84,30 +84,6 @@ brew cask install aerial
 # Helper utilities
 brew install wget
 
-# OS Settings
-
-read -p "Sign into Google Drive and then press Y to continue installing " -n 1 -r
-echo    # (optional) move to a new line
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
-fi
-
-echo "Applying macprefs from Google Drive"
-git clone https://github.com/clintmod/macprefs.git
-export MACPREFS_BACKUP_DIR="$HOME/Google Drive/macprefs"
-./macprefs/macprefs restore
-
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
-
-read -p "Check settings for macprefs changes, if it didn't work, press Y to continue and use other commands " -n 1 -r
-echo    # (optional) move to a new line
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
-fi
-
 # GUI Settings
 # TODO: Automate this, think lots of defaults write commands are needed
 
@@ -146,26 +122,13 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 #       - Allow from app store and identified devs
 #     - FileVault / Firewall ON
-#   - Trackpad
-#     - Point & Click
-#       - No lookup with 3 fingers
-#       - Secondary click
-#     - More Gestures
-#       - All except App Exposé
 #   - Date & Time
 #     - Clock
 #       - Show date
 #   - Keyboard
-#     - Keyboard
-#       - Key repeat
-#         - 1 from Fast
-#       - Delay until repeat
-#         - 3 from left
 #     - Services
 #       - Start Screen Saver (for aerial) - need automator script for this
 #     - Shortcuts
-#       - Mission Control
-#         - Move left and right with ctrl + arrow
 #       - Spotlight
 #         - Show Spotlight search: alt + Space
 #           - Don't forget to install alfred and change to Command + Space
@@ -189,7 +152,6 @@ sudo pmset -b sleep 5
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 ###############################################################################
