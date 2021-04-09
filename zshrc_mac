@@ -34,6 +34,7 @@ ENABLE_CORRECTION="true"
 # Plugins
 plugins=(
   git
+  fzf-tab
   osx
   vscode
   sudo
