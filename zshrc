@@ -67,7 +67,6 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  # copydir
   # python
   rails
   ruby
@@ -108,32 +107,11 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias x="z -I"
-alias rc="rails console"
-alias rt="rails test"
-alias rs="rails server"
 alias sk="sidekiq"
 alias dot="code ~/.dotfiles"
 # alias python="python3"
 # alias pip="pip3"
 alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
-
-# edgescan aliases
-alias wk="cd ~/workspace"
-alias era="cd ~/workspace/EdgeRails"
-alias admf="cd ~/workspace/edgescan-admin-frontend"
-alias adm2="cd ~/workspace/edgescan-admin-frontend-v2"
-alias usrf="cd ~/workspace/edgescan-user-frontend"
-alias lock='gnome-screensaver-command -l'
-
-
-# PATH=$PATH:/usr/local
-export PATH
-# export PATH=$PATH:~/Documents/python-scripts:~/Library/Python/3.6/bin
-# export PATH=~/Library/Haskell/bin:$PATH
-export PATH=/Users/andrewdonegan/.local/bin:$PATH
-# export PATH=/Users/andrewdonegan/Library/Python/2.7/bin:$PATH
-# export PATH=/usr/local/opt/python/libexec/bin:$PATH
-
 
 # Set NVM_DIR if it isn't already defined
 # [[ -z "$NVM_DIR" ]] && export NVM_DIR="$HOME/.nvm"

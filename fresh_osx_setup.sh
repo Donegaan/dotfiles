@@ -54,7 +54,6 @@ git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zdharma/fast-syntax-highlighting.git \
   ~ZSH_CUSTOM/plugins/fast-syntax-highlighting
-git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
 # Set up dotfiles
 ./install
@@ -76,11 +75,11 @@ brew cask install vlc
 # Tiling window manager à la xmonad
 # brew cask install amethyst
 brew cask install visual-studio-code
-brew cask install flux
+# brew cask install flux
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 brew cask install rectangle
-brew cask install aerial
+# brew cask install aerial
 
 # Helper utilities
 brew install wget
@@ -182,7 +181,7 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desk
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+# defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Enable spring loading for directories
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
@@ -263,7 +262,7 @@ open -a Firefox
 open -a Rectangle
 open -a Signal
 open -a Spotify
-open -a Flux
+# open -a Flux
 open -a Backup\ and\ Sync
 
 echo "run p10k configure in iTerm2 then restart for changes to take effect."

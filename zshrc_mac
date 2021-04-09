@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh" #Mac
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -26,7 +24,6 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-
 ([[ -f "$HOME/.fzf.zsh" ]] || (git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install)) && source "$HOME/.fzf.zsh"
 
 ([[ -f "$HOME/.cache/z.lua" ]] || (cd ~/.cache && curl -fsSLO https://raw.githubusercontent.com/skywind3000/z.lua/master/z.lua)) && eval "$(lua ~/.cache/z.lua --init zsh once enhanced fzf)"
@@ -34,7 +31,6 @@ ENABLE_CORRECTION="true"
 # Plugins
 plugins=(
   git
-  fzf-tab
   osx
   vscode
   sudo
@@ -89,18 +85,6 @@ alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-
-# PATH=$PATH:/usr/local
-export PATH
-# export PATH=$PATH:~/Documents/python-scripts:~/Library/Python/3.6/bin
-# export PATH=~/Library/Haskell/bin:$PATH
-export PATH=/Users/andrewdonegan/.local/bin:$PATH
-# export PATH=/Users/andrewdonegan/Library/Python/2.7/bin:$PATH
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export PATH="/opt/local/bin:$PATH"
-export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
-
 export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
@@ -110,7 +94,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # eval "$(rbenv init -)"
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
