@@ -34,9 +34,13 @@ ENABLE_CORRECTION="true"
 # Plugins
 plugins=(
   git
+  fzf-tab
   osx
+  vscode
+  sudo
   # python
   # ruby
+  # rails
   you-should-use
   zsh-autosuggestions
   # zsh-nvm
