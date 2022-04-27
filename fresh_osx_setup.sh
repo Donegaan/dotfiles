@@ -30,7 +30,7 @@ brew doctor
 brew update
 
 # Install iTerm2
-brew cask install iterm2
+brew install iterm2
 
 # Install newest bash and zsh and make zsh the login shell
 brew install bash
@@ -64,22 +64,25 @@ brew install ruby-build
 echo "rbenv is installed."
 
 # Other utilities
-brew cask install alfred
-brew cask install google-chrome
-brew cask install google-backup-and-sync
-brew cask install firefox
-brew cask install firefox-developer-edition
-brew cask install spotify
-brew cask install signal
-brew cask install vlc
+brew install alfred
+brew install google-chrome
+brew install google-backup-and-sync
+brew install firefox
+brew install firefox-developer-edition
+brew install spotify
+brew install signal
+brew install vlc
 # Tiling window manager à la xmonad
-# brew cask install amethyst
-brew cask install visual-studio-code
-# brew cask install flux
+# brew install amethyst
+brew install visual-studio-code
+# brew install flux
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code
-brew cask install rectangle
-# brew cask install aerial
+brew install font-fira-code
+brew install rectangle
+brew install do-not-disturb
+brew install knockknock
+brew install oversight
+# brew install aerial
 
 # Helper utilities
 brew install wget

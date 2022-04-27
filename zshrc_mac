@@ -31,7 +31,7 @@ ENABLE_CORRECTION="true"
 # Plugins
 plugins=(
   git
-  osx
+  macos
   vscode
   sudo
   # python
@@ -93,7 +93,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
