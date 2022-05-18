@@ -1,12 +1,21 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-# export ZSH="/Users/andrewdonegan/.oh-my-zsh" #Mac
-export ZSH="/home/andrew/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Autosuggestion colour
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=102"
 
 # Colours:
 #   Background: #282B34, #282C34
@@ -67,7 +76,9 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  # python
+  vscode
+  bundler
+  sudo
   rails
   ruby
   you-should-use
@@ -98,20 +109,19 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias x="z -I"
 alias sk="sidekiq"
-alias dot="code ~/.dotfiles"
-# alias python="python3"
-# alias pip="pip3"
+alias dot="code ~/dotfiles"
 alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
+alias vc='code .'
+alias cat='bat'
+alias python='python3'
+
+# Vim
+alias vim='nvim'
+alias vcs='cat ~/dotfiles/Vim_as_your_editor.md'
 
 # Set NVM_DIR if it isn't already defined
 # [[ -z "$NVM_DIR" ]] && export NVM_DIR="$HOME/.nvm"
