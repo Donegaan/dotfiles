@@ -2,10 +2,12 @@
 
 cd ~/workspace/journal
 
-jrnl --format md --file "$OSTYPE"_journal.md
-jrnl life --format md --file "$OSTYPE"_life_journal.md
+mkdir -p work life
 
-git add "$OSTYPE"_journal.md
-git add "$OSTYPE"_life_journal.md
+jrnl --format md --file work/"$OSTYPE"_journal.md
+jrnl life --format md --file life/"$OSTYPE"_life_journal.md
+
+git add work/"$OSTYPE"_journal.md
+git add life/"$OSTYPE"_life_journal.md
 git commit -m "Adding journal entries"
 git push
