@@ -20,4 +20,4 @@
     ~/.config/jrnl/jrnl.yaml: jrnl.yaml
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
