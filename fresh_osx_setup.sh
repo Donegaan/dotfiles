@@ -63,9 +63,10 @@ brew install rbenv
 brew install ruby-build
 echo "rbenv is installed."
 
+# TODO: Need to sync installed brew apps with this list, maybe ansible? Go through terminal history?
 # Other utilities
 brew install alfred
-brew install google-chrome
+brew install brave-browser
 brew install google-backup-and-sync
 brew install firefox
 brew install firefox-developer-edition
@@ -82,7 +83,8 @@ brew install rectangle
 brew install do-not-disturb
 brew install knockknock
 brew install oversight
-# brew install aerial
+brew install mullvadvpn
+brew install jrnl
 
 # Helper utilities
 brew install wget
