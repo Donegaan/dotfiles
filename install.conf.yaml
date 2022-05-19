@@ -19,3 +19,6 @@
     ~/.config/kitty/kitty.conf: kitty.conf
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/jrnl/jrnl.yaml: jrnl.yaml
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
