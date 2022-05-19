@@ -38,12 +38,12 @@ end)
 vim.g.clipboard = {
  name = "xsel",
  copy = {
-  ["+"] = "xsel --nodetach -i -b",
-  ["*"] = "xsel --nodetach -i -p",
+  ["+"] = "xsel --nodetach -ib",
+  ["*"] = "xsel --nodetach -ip",
  },
  paste = {
-  ["+"] = "xsel  -o -b",
-  ["*"] = "xsel  -o -b",
+  ["+"] = "xsel",
+  ["*"] = "xsel",
  },
  cache_enabled = 1,
 }
