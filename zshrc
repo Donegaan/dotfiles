@@ -119,15 +119,30 @@ alias vc='code .'
 alias cat='bat'
 alias python='python3'
 
+# Ubuntu
+alias open="xdg-open" # Opens file explorer on ubuntu 20.04
+alias lock='gnome-screensaver-command -l'
+
 # Vim
 alias vim='nvim'
 alias vcs='cat ~/dotfiles/Vim_as_your_editor.md'
 
-# Set NVM_DIR if it isn't already defined
-# [[ -z "$NVM_DIR" ]] && export NVM_DIR="$HOME/.nvm"
 
-# Load nvm if it exists
-# [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"fpath=($fpath "/home/andrew/.zfunctions")
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fzf
+export FZF_DEFAULT_COMMAND="rg --files --max-depth=10 -g \"!.git\" -g \"!undodir\" --hidden --color never --follow"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_CTRL_T_OPTS="--preview \". $ZDOTDIR/functions/fuzzy_preview {}\""
+export FZF_DEFAULT_OPTS="--height 96% --reverse --bind=shift-right:preview-page-down,shift-left:preview-page-up"
+export FZF_COMPLETION_TRIGGER="#"
+export FZF_COMPLETION_TRIGGER="#"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 
