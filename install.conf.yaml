@@ -7,12 +7,15 @@
 - clean: ["~"]
 
 - link:
-    ~/.bash_profile: bash_profile
-    ~/.bashrc: bashrc
-    ~/.bash_prompt: bash_prompt
-    ~/.gitconfig: gitconfig
-    ~/.zshrc: zshrc_mac
+    ~/.bash_profile: bash/bash_profile
+    ~/.bashrc: bash/bashrc
+    ~/.bash_prompt: bash/bash_prompt
+    ~/.gitconfig: git/gitconfig
+    ~/.zshrc: zshrc
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
+    ~/.git-completion.bash: git/git_completion
+    ~/.config/kitty/kitty.conf: kitty.conf
+    ~/.config/nvim/init.lua: nvim/init.lua
     ~/.git-completion.bash: git_completion
     ~/.config/jrnl/jrnl.yaml: jrnl.yaml
