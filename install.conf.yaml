@@ -17,3 +17,5 @@
     ~/.git-completion.bash: git/git_completion
     ~/.config/kitty/kitty.conf: kitty.conf
     ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.git-completion.bash: git_completion
+    ~/.config/jrnl/jrnl.yaml: jrnl.yaml
