@@ -11,11 +11,11 @@
     ~/.bashrc: bash/bashrc
     ~/.bash_prompt: bash/bash_prompt
     ~/.gitconfig: git/gitconfig
+    ~/.git-completion.bash: git/git_completion
+    ~/.gitmodules.bash: git/gitmodules
     ~/.zshrc: zshrc
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
-    ~/.git-completion.bash: git/git_completion
     ~/.config/kitty/kitty.conf: kitty.conf
     ~/.config/nvim/init.lua: nvim/init.lua
-    ~/.git-completion.bash: git_completion
     ~/.config/jrnl/jrnl.yaml: jrnl.yaml
