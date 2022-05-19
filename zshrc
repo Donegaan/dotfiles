@@ -118,6 +118,9 @@ alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
 alias vc='code .'
 alias cat='bat'
 alias python='python3'
+alias docker='nocorrect docker'
+alias jt='jrnl -today'
+alias jy='jrnl -on yesterday'
 
 # Ubuntu
 alias open="xdg-open" # Opens file explorer on ubuntu 20.04
@@ -149,3 +152,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(rbenv init -)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
