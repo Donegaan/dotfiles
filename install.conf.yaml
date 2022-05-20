@@ -14,6 +14,7 @@
     ~/.git-completion.bash: git/git_completion
     ~/.zshrc: zsh/zshrc_mac
     ~/.oh-my-zsh/custom/aliases.zsh: zsh/alias.sh
+    ~/.oh-my-zsh/custom/work-aliases.zsh: dotfiles-work/work-alias.sh
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
     ~/.config/nvim/init.lua: nvim/init.lua
