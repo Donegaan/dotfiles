@@ -15,6 +15,7 @@
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh/custom/aliases.zsh: zsh/alias.sh
     ~/.oh-my-zsh/custom/work-aliases.zsh: dotfiles-work/work-alias.sh
+    ~/.oh-my-zsh/custom/exports.zsh: zsh/exports.sh
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
     ~/.config/nvim/init.lua: nvim/init.lua
