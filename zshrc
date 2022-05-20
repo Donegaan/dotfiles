@@ -115,10 +115,11 @@ alias x="z -I"
 alias sk="sidekiq"
 alias dot="code ~/dotfiles"
 alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
-alias vc='code .'
 alias cat='bat'
 alias python='python3'
 alias docker='nocorrect docker'
+alias j='jrnl'
+alias je='jrnl -today --edit'
 alias jt='jrnl -today'
 alias jy='jrnl -on yesterday'
 
@@ -128,7 +129,7 @@ alias lock='gnome-screensaver-command -l'
 
 # Vim
 alias vim='nvim'
-alias vcs='cat ~/dotfiles/Vim_as_your_editor.md'
+alias vcs='cat ~/dotfiles/nvim/Vim_as_your_editor.md'
 
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

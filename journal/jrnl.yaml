@@ -5,15 +5,16 @@ colors:
   title: none
 default_hour: 9
 default_minute: 0
-editor: "nvim"
+editor: nvim
 encrypt: false
 highlight: true
-indent_character: "|"
+indent_character: '|'
 journals:
   default: ~/jrnl/journal.txt
   life: ~/jrnl/life_journal.txt
+kimeformat: '%Y-%m-%d %H:%M'
 linewrap: 79
-tagsymbols: "#@"
-template: false
-timeformat: "%Y-%m-%d %H:%M"
+tagsymbols: '#@'
+template: '/home/andrew/dotfiles/journal/template.txt'
+timeformat: '%Y-%m-%d %H:%M'
 version: v2.8.4

@@ -12,12 +12,11 @@
     ~/.bash_prompt: bash/bash_prompt
     ~/.gitconfig: git/gitconfig
     ~/.git-completion.bash: git/git_completion
-    ~/.gitmodules.bash: git/.gitmodules
     ~/.zshrc: zshrc
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
     ~/.config/nvim/init.lua: nvim/init.lua
-    ~/.config/jrnl/jrnl.yaml: jrnl.yaml
+    ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

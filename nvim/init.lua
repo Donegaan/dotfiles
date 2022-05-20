@@ -61,6 +61,10 @@ vim.o.mouse = 'a'
 --Enable break indent
 vim.o.breakindent = true
 
+-- Set tabs to be 2 spaces
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 0
+
 --Save undo history
 vim.opt.undofile = true
 
@@ -103,6 +107,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 --Remap Esc key
 vim.api.nvim_set_keymap("i", "jk", "<esc>", {noremap = true})
+vim.api.nvim_set_keymap("i", "C-c", "<esc>", {noremap = true})
 
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
