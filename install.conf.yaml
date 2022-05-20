@@ -12,7 +12,7 @@
     ~/.bash_prompt: bash/bash_prompt
     ~/.gitconfig: git/gitconfig
     ~/.git-completion.bash: git/git_completion
-    ~/.zshrc: zsh/zshrc_mac
+    ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh/custom/aliases.zsh: zsh/alias.sh
     ~/.oh-my-zsh/custom/work-aliases.zsh: dotfiles-work/work-alias.sh
     ~/.inputrc: inputrc
