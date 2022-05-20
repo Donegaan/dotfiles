@@ -1,1 +1,10 @@
 .DS_Store
+.vim/sessions/*
+packer_compiled.lua
+my_packer.lua
+.config/zsh/.zim/*
+.config/zsh/.zcompcache/*
+*.zwc*
+.zcompdump
+.zhistory
+.zlogin

@@ -65,26 +65,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Aliases
-alias zshconfig="code ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
-alias god="cd ~/Google\ Drive/"
-alias gi="cd ~/GitHub"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias doc="cd ~/Documents"
-alias rc="rails console"
-alias rt="rails test"
-alias rs="rails server"
-alias sk="sidekiq"
-alias dot="code ~/dotfiles"
-alias x="z -I"
-alias loadnvm=". $(brew --prefix nvm)/nvm.sh"
-alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
-
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"

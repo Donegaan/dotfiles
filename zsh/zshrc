@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -108,29 +106,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-alias zshconfig="code ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
-alias x="z -I"
-alias sk="sidekiq"
-alias dot="code ~/dotfiles"
-alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
-alias cat='bat'
-alias python='python3'
-alias docker='nocorrect docker'
-alias j='jrnl'
-alias je='jrnl -today --edit'
-alias jt='jrnl -today'
-alias jy='jrnl -on yesterday'
-
-# Ubuntu
-alias open="xdg-open" # Opens file explorer on ubuntu 20.04
-alias lock='gnome-screensaver-command -l'
-
-# Vim
-alias vim='nvim'
-alias vcs='cat ~/dotfiles/nvim/Vim_as_your_editor.md'
-
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
