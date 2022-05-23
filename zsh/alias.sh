@@ -11,6 +11,7 @@ alias j='jrnl'
 alias je='jrnl -today --edit'
 alias jt='jrnl -today'
 alias jy='jrnl -on yesterday'
+alias jf='jrnl -on friday'
 
 # Ubuntu
 alias open="xdg-open" # Opens file explorer on ubuntu 20.04
