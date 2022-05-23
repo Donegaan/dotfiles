@@ -63,7 +63,12 @@ vim.o.breakindent = true
 
 -- Set tabs to be 2 spaces
 vim.opt.tabstop = 2
-vim.opt.softtabstop = 0
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = -1
+vim.opt.shiftround = true
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 --Save undo history
 vim.opt.undofile = true
