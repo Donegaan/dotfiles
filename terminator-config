@@ -2,11 +2,12 @@
   window_state = maximise
   title_transmit_bg_color = "#204a87"
   inactive_color_offset = 0.6098484848484849
-  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler
   suppress_multiple_term_dialog = True
   always_split_with_profile = True
   title_use_system_font = False
   title_font = MesloLGS NF 9
+  borderless = True
 [keybindings]
 [profiles]
   [[default]]
@@ -14,7 +15,7 @@
     cursor_shape = ibeam
     cursor_color = "#edd400"
     cursor_color_fg = False
-    font = MesloLGS NF 12
+    font = MesloLGS NF 13
     foreground_color = "#bebebe"
     show_titlebar = False
     scrollback_infinite = True
@@ -26,7 +27,7 @@
     cursor_shape = ibeam
     cursor_color = "#c574dd"
     cursor_color_fg = False
-    font = MesloLGS NF 12
+    font = MesloLGS NF 13
     foreground_color = "#fdfdfd"
     show_titlebar = False
     scrollback_infinite = True
@@ -38,7 +39,7 @@
     cursor_shape = ibeam
     cursor_color = "#ffcc00"
     cursor_color_fg = False
-    font = MesloLGS NF 12
+    font = MesloLGS NF 13
     foreground_color = "#c2c8ee"
     show_titlebar = False
     scrollback_infinite = True
@@ -49,7 +50,7 @@
     background_color = "#2a2139"
     cursor_shape = ibeam
     cursor_color = "#72f1b8"
-    font = MesloLGS NF 12
+    font = MesloLGS NF 13
     foreground_color = "#f0eff1"
     show_titlebar = False
     scrollback_infinite = True
@@ -58,14 +59,14 @@
     copy_on_selection = True
   [[dracula]]
     background_color = "#282a36"
-    background_image = None
-    font = MesloLGS NF 12
-    foreground_color = "#f8f8f2"
-    palette = "#262626:#e356a7:#42e66c:#e4f34a:#9b6bdf:#e64747:#75d7ec:#efa554:#7a7a7a:#ff79c6:#50fa7b:#f1fa8c:#bd93f9:#ff5555:#8be9fd:#ffb86c"
-    use_system_font = False
     cursor_shape = ibeam
+    cursor_color = "#f8f8f2"
+    font = MesloLGS NF 13
+    foreground_color = "#f8f8f2"
     show_titlebar = False
     scrollback_infinite = True
+    palette = "#262626:#e356a7:#42e66c:#e4f34a:#9b6bdf:#e64747:#75d7ec:#efa554:#7a7a7a:#ff79c6:#50fa7b:#f1fa8c:#bd93f9:#ff5555:#8be9fd:#ffb86c"
+    use_system_font = False
     copy_on_selection = True
 [layouts]
   [[default]]
