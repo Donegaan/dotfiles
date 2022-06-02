@@ -7,6 +7,7 @@ alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
 alias cat='bat'
 alias python='python3'
 alias docker='nocorrect docker'
+alias bundle='nocorrect bundle'
 alias j='jrnl'
 alias je='jrnl -today --edit'
 alias jt='jrnl -today'
