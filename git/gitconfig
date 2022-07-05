@@ -12,3 +12,13 @@
 	rebase = true
 [init]
 	templatedir = ~/.git-templates
+# Use a pager for large output, just like other git commands.
+[pager]
+difftool = true
+[diff]
+	tool = difftastic
+	external = difft
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"

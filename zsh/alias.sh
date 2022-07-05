@@ -29,6 +29,17 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
 alias dot="code ~/dotfiles"
-alias loadnvm=". $(brew --prefix nvm)/nvm.sh"
+# alias loadnvm=". $(brew --prefix nvm)/nvm.sh"
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Git
+alias gwt='git worktree'
+alias gwta='git worktree add'
+alias gwtls='git worktree list'
+alias gwtlo='git worktree lock'
+alias gwtmv='git worktree move'
+alias gwtpr='git worktree prune'
+alias gwtrm='git worktree remove'
+alias gwtulo='git worktree unlock'
+alias gdft='git difftool'
