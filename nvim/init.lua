@@ -28,23 +28,11 @@ local config = {
 	-- Set colorscheme to use
 	colorscheme = "tokyonight-night",
 
-	-- Override highlight groups in any theme
-	-- highlights = {
-	-- 	-- duskfox = { -- a table of overrides/changes to the default
-	-- 	--   Normal = { bg = "#000000" },
-	-- 	-- },
-	-- 	default_theme = function(highlights) -- or a function that returns a new table of colors to set
-	-- 		local C = require("default_theme.colors")
-	--
-	-- 		highlights.Normal = { fg = C.fg, bg = C.bg }
-	-- 		return highlights
-	-- 	end,
-	-- },
-
 	-- set vim options here (vim.<first_key>.<second_key> =  value)
 	options = {
 		opt = {
 			relativenumber = true, -- sets vim.opt.relativenumber
+			colorcolumn = { 100 },
 		},
 		g = {
 			mapleader = " ", -- sets vim.g.mapleader
@@ -170,12 +158,17 @@ local config = {
 			["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
 			["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
 			["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+			["<leader>fa"] = { ":A<CR>", desc = "Go to associated rails file" },
+			["<leader>fr"] = { ":R<CR>", desc = "Go to related rails file" },
+			["<leader>d"] = { '"_d' },
 			-- quick save
 			-- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 		},
-		t = {
-			-- setting a mapping to false will disable it
-			-- ["<esc>"] = false,
+		v = {
+			["<leader>d"] = { '"_d' },
+		},
+		x = {
+			["<leader>p"] = { '"_dP' },
 		},
 	},
 
@@ -184,17 +177,12 @@ local config = {
 		init = {
 			-- You can disable default plugins as follows:
 			-- ["goolord/alpha-nvim"] = { disable = true },
-
-			-- You can also add new plugins here as well:
-			-- Add plugins, the packer syntax without the "use"
+			{
+				"sindrets/diffview.nvim",
+				requires = { "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons" },
+			},
 			{ "folke/tokyonight.nvim" },
-			-- {
-			--   "ray-x/lsp_signature.nvim",
-			--   event = "BufRead",
-			--   config = function()
-			--     require("lsp_signature").setup()
-			--   end,
-			-- },
+			{ "tpope/vim-rails" },
 		},
 		-- All other entries override the require("<key>").setup({...}) call for default plugins
 		["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`

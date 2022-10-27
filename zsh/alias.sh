@@ -8,6 +8,7 @@ alias cat='bat'
 alias python='python3'
 alias docker='nocorrect docker'
 alias bundle='nocorrect bundle'
+alias sudo='nocorrect sudo '
 alias j='jrnl'
 alias je='jrnl -today --edit'
 alias jt='jrnl -today'
@@ -28,7 +29,7 @@ alias gi="cd ~/GitHub"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
-alias dot="code ~/dotfiles"
+alias dot="vim ~/dotfiles"
 # alias loadnvm=". $(brew --prefix nvm)/nvm.sh"
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
