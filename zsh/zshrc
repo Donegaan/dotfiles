@@ -15,6 +15,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Autosuggestion colour
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=102"
 
+zstyle ':omz:update' mode auto
+
 # Colours:
 #   Background: #282B34, #282C34
 #   Text: #A8AEBB
@@ -22,9 +24,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=102"
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-([[ -f "$HOME/.fzf.zsh" ]] || (git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install)) && source "$HOME/.fzf.zsh"
-
-([[ -f "$HOME/.cache/z.lua" ]] || (cd ~/.cache && curl -fsSLO https://raw.githubusercontent.com/skywind3000/z.lua/master/z.lua)) && eval "$(lua ~/.cache/z.lua --init zsh once enhanced fzf)"
 
 plugins=(
   evalcache
@@ -33,6 +32,9 @@ plugins=(
   bundler
   rails
   ruby
+  fzf
+  fd
+  zoxide
   you-should-use
   zsh-autosuggestions
   nvm
