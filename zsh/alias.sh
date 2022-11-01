@@ -1,6 +1,6 @@
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
-alias x="z -I"
+alias x="zi"
 alias sk="sidekiq"
 alias dot="code ~/dotfiles"
 alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
