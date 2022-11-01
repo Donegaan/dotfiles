@@ -36,7 +36,6 @@ plugins=(
   you-should-use
   zsh-autosuggestions
   nvm
-
   fast-syntax-highlighting
 )
 source "$HOME/.cargo/env"

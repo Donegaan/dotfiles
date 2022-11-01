@@ -18,9 +18,9 @@
     ~/.oh-my-zsh/custom/exports.zsh: zsh/exports.sh
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
-    ~/.config/nvim/lua/user/init.lua: nvim/init.lua
     ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
     ~/.config/terminator/config: terminator-config
+    ~/.config/nvim: nvim
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
