@@ -33,8 +33,9 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- Doesn't quite work, moves text and then puts you at top of file in insert mode
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "Go to associated rails file" }, opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "Go to related rails file" }, opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -55,22 +56,6 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Plugins --
-
--- vim-rails
-keymap("n", "<leader>fa", ":A<CR>", opts)
-keymap("n", "<leader>fr", ":R<CR>", opts)
-
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
--- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-
--- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
