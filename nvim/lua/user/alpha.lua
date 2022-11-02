@@ -13,6 +13,7 @@ dashboard.section.header.val = {
   [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 }
 dashboard.section.buttons.val = {
+-- Might need to change find file map so I can access other `f` commands
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
   dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
@@ -21,15 +22,6 @@ dashboard.section.buttons.val = {
   dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
-local function footer()
-  return "chrisatmachine.com"
-end
-
-dashboard.section.footer.val = footer()
-
-dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Include"
-dashboard.section.buttons.opts.hl = "Keyword"
 
 dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
