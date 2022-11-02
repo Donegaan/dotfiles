@@ -56,6 +56,10 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- vim-rails
+keymap("n", "<leader>fa", ":A<CR>", opts)
+keymap("n", "<leader>fr", ":R<CR>", opts)
+
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
