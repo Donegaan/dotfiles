@@ -8,7 +8,7 @@ an executable
 ]]
 
 vim.opt.relativenumber = true
-vim.opt.colorcolumn = "100" 
+vim.opt.colorcolumn = "100"
 vim.opt.scrolloff = 5 -- Determines the number of context lines you would like to see above and below the cursor
 vim.opt.ignorecase = true -- Ignore case in search
 vim.opt.smartcase = true -- Case-sensitive search when search term contains uppercase characters. Otherwise, case-sensitive search.  timeoutlen = 200, -- Time to wait for a mapped sequence to complete (in milliseconds)

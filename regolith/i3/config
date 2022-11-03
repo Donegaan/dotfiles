@@ -163,6 +163,8 @@ font pango:$i3-wm.font
 # i3 Config Partials
 ###############################################################################
 
+mouse_warping none
+
 # Include any regolith i3 partials
 include /usr/share/regolith/i3/config.d/*
 
