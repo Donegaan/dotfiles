@@ -1,7 +1,13 @@
-i3-wm.mod: Mod1
-i3-wm.alt: Mod4
+i3-wm.workspace.01.name: 1:1:  
+i3-wm.workspace.02.name: 2:2: 
+i3-wm.workspace.03.name: 3:3: 
+i3-wm.workspace.04.name: 4:4: 
+i3-wm.workspace.05.name: 5:ﭮ :5
+i3-wm.workspace.06.name: 6:6: 
+
+### Theme
 regolith.look.path: /usr/share/regolith-look/dracula
 regolith.wallpaper.file: Pictures/Wallpapers/JellyJam-OceanSun.png
-i3-wm.program.lock: betterlockscreen --lock --off 20 dim
 gtk.font_name: Ubuntu 12
-gtk.monospace_font_name: JetBrainsMono Nerd Font Regulat 12
+gtk.monospace_font_name: JetBrainsMono Nerd Font Regular 12
+i3-wm.program.lock: betterlockscreen --lock --off 20 dim

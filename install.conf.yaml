@@ -21,6 +21,7 @@
     ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
     ~/.config/terminator/config: terminator-config
     ~/.config/nvim: nvim
+    ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/regolith2/Xresources: regolith/Xresources
     ~/.config/regolith2/i3/config: regolith/i3/config
 

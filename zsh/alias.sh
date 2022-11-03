@@ -20,8 +20,8 @@ alias open="xdg-open" # Opens file explorer on ubuntu 20.04
 alias lock='gnome-screensaver-command -l'
 
 # Vim
-alias v='nvim'
-alias vim='nvim'
+alias v='lvim'
+alias vim='lvim'
 alias vcs='cat ~/dotfiles/nvim/Vim_as_your_editor.md'
 
 # Mac
