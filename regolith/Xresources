@@ -1,0 +1,5 @@
+i3-wm.mod: Mod1
+i3-wm.alt: Mod4
+regolith.look.path: /usr/share/regolith-look/dracula
+regolith.wallpaper.file: Pictures/Wallpapers/JellyJam-OceanSun.png
+i3-wm.program.lock: betterlockscreen --lock --off 20 dim

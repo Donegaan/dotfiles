@@ -18,5 +18,4 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
 keymap("n", "<leader>", "<cmd>call VSCodeNotify('whichkey.show')<cr>", opts)

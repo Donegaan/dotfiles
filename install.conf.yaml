@@ -21,6 +21,8 @@
     ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
     ~/.config/terminator/config: terminator-config
     ~/.config/nvim: nvim
+    ~/.config/regolith2/Xresources: regolith/Xresources
+    ~/.config/regolith2/i3/config: regolith/i3/config
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
