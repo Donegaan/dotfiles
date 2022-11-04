@@ -16,7 +16,7 @@ vim.opt.smartcase = true -- Case-sensitive search when search term contains uppe
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight-moon"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -148,7 +148,10 @@ linters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  { "folke/tokyonight.nvim",
+  { "tpope/vim-rails" },
+  {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim'
   },
 }
 
@@ -158,6 +161,19 @@ lvim.plugins = {
 --   -- enable wrap mode for json files only
 --   command = "setlocal wrap",
 -- })
+-- Autocommand to remember cursor position in file
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function()
+    local row, col = unpack(vim.api.nvim_buf_get_mark(0, '"'))
+    if { row, col } ~= { 0, 0 } and row <= vim.api.nvim_buf_line_count(0) then
+      vim.api.nvim_win_set_cursor(0, { row, 0 })
+      if vim.fn.line("w$") ~= row then
+        vim.cmd("norm! zz")
+      end
+    end
+  end,
+})
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "zsh",
   callback = function()
