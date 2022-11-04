@@ -1,5 +1,5 @@
 .DS_Store
-.vim/sessions/*
+nvim/sessions/*
 packer_compiled.lua
 my_packer.lua
 .config/zsh/.zim/*
