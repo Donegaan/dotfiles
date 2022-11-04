@@ -21,8 +21,10 @@ zstyle ':omz:update' mode auto
 #   Background: #282B34, #282C34
 #   Text: #A8AEBB
 
-# Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
+HYPHEN_INSENSITIVE="false"
+CASE_SENSITIVE="false"
+HIST_IGNORE_SPACE="true"
 
 
 plugins=(

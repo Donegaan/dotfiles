@@ -1,13 +1,12 @@
 [global_config]
   window_state = maximise
+  borderless = True
   title_transmit_bg_color = "#204a87"
   inactive_color_offset = 0.6098484848484849
-  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler
   suppress_multiple_term_dialog = True
   always_split_with_profile = True
   title_use_system_font = False
   title_font = JetBrainsMono Nerd Font 9
-  borderless = True
 [keybindings]
 [profiles]
   [[default]]
@@ -18,6 +17,7 @@
     font = JetBrainsMono Nerd Font 12
     foreground_color = "#bebebe"
     show_titlebar = False
+    scrollbar_position = hidden
     scrollback_infinite = True
     palette = "#2e3436:#f47375:#6bf1be:#e5f081:#6aa1fd:#c481ff:#6de4fd:#d3d7cf:#555753:#f47375:#6bf1be:#e5f081:#6aa1fd:#c481ff:#6de4fd:#eeeeec"
     use_system_font = False

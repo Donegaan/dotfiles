@@ -25,5 +25,45 @@
     ~/.config/regolith2/Xresources: regolith/Xresources
     ~/.config/regolith2/i3: regolith/i3
 
+- apt:
+    - git
+    - curl
+    - wget
+    - tree
+    - zsh
+    - vim
+    - htop
+    - zip
+    - unzip
+    - ripgrep
+    - terminator
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - description: Install Oh-My-Zsh
+      command: |
+        if cd ~/.ohmyzsh
+        then git pull;
+        else sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        fi
+      stdout: true
+      stderr: true
+    - description: Clone asdf
+      quiet: true
+      command: |
+        if cd ~/.asdf;
+        then git pull;
+        else git clone https://github.com/asdf-vm/asdf.git ~/.asdf;
+        fi
+
+- asdf:
+  - plugin: nodejs
+  - plugin: ruby
+    global: 2.6.4
+    versions:
+      - 2.6.4
+  - plugin: neovim
+    url: https://github.com/richin13/asdf-neovim.git
+    global: stable
+    versions:
+      - stable
