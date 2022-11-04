@@ -23,7 +23,7 @@
     ~/.config/nvim: nvim
     ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/regolith2/Xresources: regolith/Xresources
-    ~/.config/regolith2/i3/config: regolith/i3/config
+    ~/.config/regolith2/i3: regolith/i3
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
