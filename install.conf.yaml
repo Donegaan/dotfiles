@@ -19,6 +19,7 @@
           zsh \
           htop \
           zip \
+          bat \
           unzip \
           ripgrep \
           terminator \
@@ -30,7 +31,7 @@
         then git pull;
         else sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         fi
-    - description: Clone asdf
+    - description: Install asdf
       quiet: true
       command: |
         if cd ~/.asdf
@@ -50,6 +51,7 @@
     ~/.oh-my-zsh/custom/exports.zsh: zsh/exports.sh
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
+    ~/.asdfrc: asdfrc
     ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
     ~/.config/terminator/config: terminator-config
     ~/.config/nvim: nvim
@@ -59,6 +61,8 @@
 
 - asdf:
   - plugin: nodejs
+  - plugin: difftastic
+  - plugin: fd
   - plugin: ruby
     global: 2.6.1
     versions:
@@ -70,3 +74,7 @@
     global: stable
     versions:
       - stable
+  - plugin: zoxide
+    url: https://github.com/nyrst/asdf-zoxide.git
+  - plugin: fzf 
+    url: https://github.com/kompiro/asdf-fzf.git
