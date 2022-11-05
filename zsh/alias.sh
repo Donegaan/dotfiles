@@ -22,8 +22,8 @@ alias lock='gnome-screensaver-command -l'
 
 # Vim
 alias v='lvim'
-alias vim='lvim'
-alias vcs='cat ~/dotfiles/nvim/Vim_as_your_editor.md'
+alias v.='v .'
+alias vim='v'
 
 # Mac
 alias god="cd ~/Google\ Drive/"
