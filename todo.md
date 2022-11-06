@@ -22,5 +22,6 @@
 - Add firefox profile saver, I think there is an asdf one. 
 
 - Add oh my zsh git clone commands to script
+- Upload powerlevel10k config to dotfiles directory
 
 - Set zsh as default shell
