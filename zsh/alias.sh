@@ -4,6 +4,7 @@ alias x="zi"
 alias sk="sidekiq"
 alias dot="code ~/dotfiles"
 alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
+alias bat='batcat'
 alias cat='bat'
 alias python='python3'
 alias docker='nocorrect docker'

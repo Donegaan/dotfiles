@@ -52,6 +52,8 @@
     ~/.inputrc: inputrc
     ~/.irbrc: irbrc
     ~/.asdfrc: asdfrc
+    ~/.tool_versions: .tool_versions
+    ~/.default-cargo-crates: .default-cargo-crates
     ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
     ~/.config/terminator/config: terminator-config
     ~/.config/nvim: nvim
