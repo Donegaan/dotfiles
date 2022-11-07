@@ -1,0 +1,34 @@
+#!/bin/sh
+
+B='#00000000'  # blank
+T='#DEDEDECC'  # text
+W='#DEDEDECC'  # wrong
+
+i3lock \
+--insidever-color=$B   \
+--ringver-color=$B     \
+\
+--insidewrong-color=$B \
+--ringwrong-color=$B   \
+\
+--inside-color=$B      \
+--ring-color=$B        \
+--line-color=$B        \
+--separator-color=$B   \
+\
+--verif-color=$B        \
+--wrong-color=$T        \
+--time-color=$T        \
+--date-color=$T        \
+--layout-color=$B      \
+--keyhl-color=$W       \
+--bshl-color=$W        \
+\
+-p win \
+--screen 1            \
+--blur 10              \
+--clock               \
+--indicator           \
+--time-str="%H:%M"  \
+--keylayout 1         \
+--wrong-text="Incorrect Password"
