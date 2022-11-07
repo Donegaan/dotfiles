@@ -1,4 +1,0 @@
-- Split up install conf into full install and just creating new links
-  - Don't want to be generating ssh keys everytime or stuff like that
-  - Make separate asdf plugin install script, don't use the dotbot plugin
-    - add .tool_version file to dotfiles for default versions of things installed by asdf
