@@ -9,6 +9,7 @@ sudo apt-get install -y \
           htop \
           zip \
           unzip \
+          gnome-tweaks \
           terminator 
 sudo apt-get autoremove -y
 
@@ -29,6 +30,14 @@ git clone https://github.com/mroth/evalcache ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
 if cd ~/.asdf
 then asdf update;
 else git clone https://github.com/asdf-vm/asdf.git ~/.asdf;
+fi
+
+# Install fonts
+if ! cd ~/.local/share/fonts/fonts then
+# TODO: FIX THIS
+echo "TESTING FONTS";
+  #mkdir -p ~/.local/share/fonts
+  #cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 fi
 
 # Install lunarvim
