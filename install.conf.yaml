@@ -18,8 +18,9 @@
     ~/.oh-my-zsh/custom/work-aliases.zsh: dotfiles-work/work-alias.sh
     ~/.oh-my-zsh/custom/exports.zsh: zsh/exports.sh
     ~/.irbrc: irbrc
-    ~/.asdfrc: asdfrc
-    ~/.tool-versions: .tool-versions
+    ~/.asdfrc: asdf/asdfrc
+    ~/.tool-versions: asdf/.tool-versions
+    ~/.default-gems: asdf/.default-gems
     ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
     ~/.config/terminator/config: terminator-config
     ~/.config/nvim: nvim
