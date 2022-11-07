@@ -6,49 +6,6 @@
 
 - clean: ["~"]
 
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - description: Install apt packages
-      quiet: true
-      command: |
-        sudo apt-get update -y && sudo apt-get install -y \
-          git \
-          curl \
-          wget \
-          tree \
-          zsh \
-          htop \
-          zip \
-          bat \
-          unzip \
-          ripgrep \
-          terminator \
-          && sudo apt-get autoremove -y
-    - description: Install Oh-My-Zsh
-      quiet: true
-      command: |
-        if cd ~/.oh-my-zsh
-        then git pull;
-        else sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        fi
-    - description: Install asdf
-      quiet: true
-      command: |
-        if cd ~/.asdf
-        then git pull;
-        else git clone https://github.com/asdf-vm/asdf.git ~/.asdf;
-        fi
-    - [LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh), Installing lunarvim]
-    - [git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/po
-       │ werlevel10k
-  53   │ git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
-  54   │ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-aut
-       │ osuggestions
-  55   │ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
-  56   │   ~ZSH_CUSTOM/plugins/fast-syntax-highlighting
-, Installing oh-my-zsh plugins]
-
-
 - link:
     ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
@@ -56,6 +13,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.git-completion.bash: git/git_completion
     ~/.zshrc: zsh/zshrc
+    ~/.p10k.zsh: zsh/.p10k.zsh
     ~/.oh-my-zsh/custom/aliases.zsh: zsh/alias.sh
     ~/.oh-my-zsh/custom/work-aliases.zsh: dotfiles-work/work-alias.sh
     ~/.oh-my-zsh/custom/exports.zsh: zsh/exports.sh
@@ -63,7 +21,6 @@
     ~/.irbrc: irbrc
     ~/.asdfrc: asdfrc
     ~/.tool-versions: .tool-versions
-    ~/.default-cargo-crates: .default-cargo-crates
     ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
     ~/.config/terminator/config: terminator-config
     ~/.config/nvim: nvim
@@ -71,22 +28,6 @@
     ~/.config/regolith2/Xresources: regolith/Xresources
     ~/.config/regolith2/i3: regolith/i3
 
-- asdf:
-  - plugin: nodejs
-  - plugin: difftastic
-  - plugin: fd
-  - plugin: ruby
-    global: 2.6.1
-    versions:
-      - 2.6.1
-      - 2.7.0
-      - 2.7.5
-  - plugin: neovim
-    url: https://github.com/richin13/asdf-neovim.git
-    global: stable
-    versions:
-      - stable
-  - plugin: zoxide
-    url: https://github.com/nyrst/asdf-zoxide.git
-  - plugin: fzf 
-    url: https://github.com/kompiro/asdf-fzf.git
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
