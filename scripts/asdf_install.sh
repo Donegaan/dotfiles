@@ -29,27 +29,16 @@ function install_asdf_package() {
 }
 
 asdf_tools=(
-  "github-cli"
-  "bat"
-  "ripgrep"
-  "difftastic"
-  "fd"
-  - plugin: nodejs
-  - plugin: ruby
-    global: 2.6.1
-    versions:
-      - 2.6.1
-      - 2.7.0
-      - 2.7.5
-  - plugin: neovim
-    url: https://github.com/richin13/asdf-neovim.git
-    global: stable
-    versions:
-      - stable
-  - plugin: zoxide
-    url: https://github.com/nyrst/asdf-zoxide.git
-  - plugin: fzf 
-    url: https://github.com/kompiro/asdf-fzf.git
+"bat"
+"difftastic"
+"fd"
+"fzf"
+"github-cli"
+"neovim"
+"nodejs"
+"ripgrep"
+"ruby"
+"zoxide"
 )
 
 for tool in "${asdf_tools[@]}"; do

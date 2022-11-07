@@ -35,7 +35,6 @@ plugins=(
   zoxide
   you-should-use
   zsh-autosuggestions
-  nvm
   fast-syntax-highlighting
 )
 
