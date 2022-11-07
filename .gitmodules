@@ -6,6 +6,3 @@
 [submodule "dotfiles-work"]
 	path = dotfiles-work
 	url = git@github.com:Donegaan/dotfiles-work.git
-[submodule "dotbot-asdf"]
-	path = dotbot-asdf
-	url = https://github.com/sobolevn/dotbot-asdf.git
