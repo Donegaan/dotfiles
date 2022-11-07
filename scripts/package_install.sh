@@ -23,6 +23,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/cu
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ~/oh-my-zsh/custom/plugins/you-should-use
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zdharma/fast-syntax-highlighting.git ~ZSH_CUSTOM/plugins/fast-syntax-highlighting
+git clone https://github.com/mroth/evalcache ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/evalcache
 
 # Install asdf
 if cd ~/.asdf

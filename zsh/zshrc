@@ -25,6 +25,7 @@ CASE_SENSITIVE="false"
 HIST_IGNORE_SPACE="true"
 
 plugins=(
+  evalcache
   git
   asdf
   bundler
@@ -43,3 +44,5 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+_evalcache /home/linuxbrew/.linuxbrew/bin/brew shellenv
