@@ -10,19 +10,6 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_color = "#2c3251"
-    cursor_shape = ibeam
-    cursor_color = "#edd400"
-    cursor_color_fg = False
-    font = JetBrainsMono Nerd Font 12
-    foreground_color = "#bebebe"
-    show_titlebar = False
-    scrollbar_position = hidden
-    scrollback_infinite = True
-    palette = "#2e3436:#f47375:#6bf1be:#e5f081:#6aa1fd:#c481ff:#6de4fd:#d3d7cf:#555753:#f47375:#6bf1be:#e5f081:#6aa1fd:#c481ff:#6de4fd:#eeeeec"
-    use_system_font = False
-    copy_on_selection = True
-  [[lovelace]]
     background_color = "#1d1f28"
     cursor_shape = ibeam
     cursor_color = "#c574dd"
@@ -30,42 +17,24 @@
     font = JetBrainsMono Nerd Font 12
     foreground_color = "#fdfdfd"
     show_titlebar = False
+    scrollbar_position = hidden
     scrollback_infinite = True
     palette = "#282a36:#f37f97:#5adecd:#f2a272:#8897f4:#c574dd:#79e6f3:#fdfdfd:#414458:#ff4971:#18e3c8:#ff8037:#556fff:#b043d1:#3fdcee:#bebec1"
     use_system_font = False
     copy_on_selection = True
-  [[Material-Palenight]]
-    background_color = "#292d3e"
+  [[tokyonight]]
+    background_color = "#222436"
+    background_darkness = 0.9
+    background_type = transparent
     cursor_shape = ibeam
-    cursor_color = "#ffcc00"
+    cursor_color = "#c8d3f5"
     cursor_color_fg = False
     font = JetBrainsMono Nerd Font 12
-    foreground_color = "#c2c8ee"
+    foreground_color = "#fdfdfd"
     show_titlebar = False
+    scrollbar_position = hidden
     scrollback_infinite = True
-    palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
-    use_system_font = False
-    copy_on_selection = True
-  [[synthwave-everything]]
-    background_color = "#2a2139"
-    cursor_shape = ibeam
-    cursor_color = "#72f1b8"
-    font = JetBrainsMono Nerd Font 12
-    foreground_color = "#f0eff1"
-    show_titlebar = False
-    scrollback_infinite = True
-    palette = "#fefefe:#f97e72:#72f1b8:#fede5d:#6d77b3:#c792ea:#f772e0:#fefefe:#fefefe:#f88414:#72f1b8:#fff951:#36f9f6:#e1acff:#f92aad:#fefefe"
-    use_system_font = False
-    copy_on_selection = True
-  [[dracula]]
-    background_color = "#282a36"
-    cursor_shape = ibeam
-    cursor_color = "#f8f8f2"
-    font = JetBrainsMono Nerd Font 12
-    foreground_color = "#f8f8f2"
-    show_titlebar = False
-    scrollback_infinite = True
-    palette = "#262626:#e356a7:#42e66c:#e4f34a:#9b6bdf:#e64747:#75d7ec:#efa554:#7a7a7a:#ff79c6:#50fa7b:#f1fa8c:#bd93f9:#ff5555:#8be9fd:#ffb86c"
+    palette = "#1b1d2b:#ff757f:#c3e88d:#ffc777:#82aaff:#c099ff:#86e1fc:#828bb8:#444a73:#ff757f:#c3e88d:#ffc777:#82aaff:#c099ff:#86e1fc:#c8d3f5"
     use_system_font = False
     copy_on_selection = True
 [layouts]
@@ -76,5 +45,5 @@
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = lovelace
+      profile = tokyonight
 [plugins]
