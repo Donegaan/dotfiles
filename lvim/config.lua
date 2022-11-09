@@ -18,6 +18,7 @@ vim.opt.cmdheight = 1
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "tokyonight-moon"
+lvim.transparent_window = true
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
