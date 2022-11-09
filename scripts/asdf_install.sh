@@ -34,6 +34,7 @@ asdf_tools=(
 "fd"
 "fzf"
 "github-cli"
+"lazygit"
 "neovim"
 "nodejs"
 "ripgrep"

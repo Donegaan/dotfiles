@@ -25,9 +25,15 @@ function confirm() {
   done
 }
 
+cd ~/dotfiles/scripts
+
 ./package_install.sh 
 ./asdf_install.sh
-# Lunarvim install needs to happen after asdf install
+# Install lunarvim
+if ! cd ~/.local/share/lunarvim
+then LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh);
+fi
+cd
 ./regolith_20_04_install.sh
 if confirm "Do you want to create a new ssh key and upload it to GitHub?"; then
   ./github_ssh_setup.sh

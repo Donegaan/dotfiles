@@ -3,6 +3,7 @@ difftastic 0.37.0
 fd 8.5.2
 fzf 0.34.0
 github-cli 2.19.0
+lazygit 0.35
 neovim stable
 nodejs lts
 ripgrep 13.0.0
