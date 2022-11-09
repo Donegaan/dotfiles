@@ -13,6 +13,5 @@ sudo apt install regolith-desktop
 sudo apt install regolith-look-dracula
 regolith-look set dracula
 regolith-look refresh
-sudo apt install regolith-compositor-picom-glx
-# Not sure about this command, might be removing too much
-sudo apt remove regolith-i3-base-launchers regolith-i3-ilia regolith-i3-navigation regolith-i3-gaps-partial regolith-i3-default-style regolith-i3-next-workspace regolith-i3-workspace-config regolith-i3-resize regolith-i3-session regolith-i3-config -y
+sudo apt install regolith-compositor-picom-glx regolith-control-center regolith-ftue 
+sudo apt remove regolith-i3-config regolith-i3-base-launchers regolith-i3-ilia regolith-i3-next-workspace regolith-i3-navigation regolith-i3-gaps-partial regolith-i3-default-style regolith-i3-workspace-config regolith-i3-resize -y
