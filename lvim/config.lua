@@ -46,13 +46,10 @@ lvim.builtin.telescope.defaults.mappings = {
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- If I want to toggleterm with command, copy Astrovim function: https://github.com/AstroNvim/AstroNvim/blob/80f650ab0c7dc3a93c9fe372010919be936d7eb9/lua/core/utils/init.lua#L283
+lvim.builtin.which_key.mappings["A"] = { "<cmd>:A<CR>", "Go to associated rails file" }
+lvim.builtin.which_key.mappings["R"] = { "<cmd>:R<CR>", "Go to related rails file" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["sw"] = { "<cmd>Telescope live_grep<CR>", "Search words" }
-lvim.builtin.which_key.mappings["sW"] = { "<cmd>Telescope live_grep --hidden --no-ignore<CR>",
-  "Search words in all files" }
-lvim.builtin.which_key.mappings["st"] = {
-  "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects"
-}
 lvim.builtin.which_key.mappings["p"] = {
   name = "+Package",
   I = { "<cmd>Mason<CR>", "Mason Installer" },
@@ -183,6 +180,7 @@ linters.setup {
 -- Additional Plugins
 lvim.plugins = {
   { "tpope/vim-rails" },
+  { "tpope/vim-surround" },
   {
     "shatur/neovim-session-manager",
     requires = 'nvim-lua/plenary.nvim',
@@ -197,6 +195,20 @@ lvim.plugins = {
         trigger_events = { "BufLeave" },
       }
     end,
+  },
+  {
+    'TimUntersberger/neogit',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim'
+    },
+    config = function()
+      require('neogit').setup({
+        integrations = {
+          diffview = true
+        },
+      })
+    end
   },
   {
     'sindrets/diffview.nvim',
@@ -217,6 +229,14 @@ lvim.plugins = {
         }
       })
     end
+  },
+  {
+    'sudormrfbin/cheatsheet.nvim',
+    requires = {
+      { 'nvim-telescope/telescope.nvim' },
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+    }
   },
 }
 
