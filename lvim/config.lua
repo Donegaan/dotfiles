@@ -25,6 +25,10 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+-- centre screen after doing these actions
+lvim.keys.normal_mode["C-u"] = "<C-u>zz"
+lvim.keys.normal_mode["C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["n"] = "nzz"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
