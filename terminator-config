@@ -29,7 +29,7 @@
     background_type = transparent
     cursor_shape = ibeam
     cursor_color = "#a9b1d6"
-    font = JetBrainsMono Nerd Font 12
+    font = JetBrainsMono Nerd Font 11
     foreground_color = "#fdfdfd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -44,7 +44,7 @@
     cursor_shape = ibeam
     cursor_color = "#ffffff"
     cursor_color_fg = False
-    font = JetBrainsMono Nerd Font 12
+    font = JetBrainsMono Nerd Font 11
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
