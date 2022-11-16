@@ -90,8 +90,8 @@ lvim.builtin.which_key.mappings["n"] = {
   n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" },
   N = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest" },
   o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" },
-  S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
-  s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
+  x = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
+  S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
 }
 -- User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
