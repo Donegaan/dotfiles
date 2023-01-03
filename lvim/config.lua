@@ -205,20 +205,6 @@ lvim.plugins = {
     end,
   },
   {
-    'TimUntersberger/neogit',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim'
-    },
-    config = function()
-      require('neogit').setup({
-        integrations = {
-          diffview = true
-        },
-      })
-    end
-  },
-  {
     'sindrets/diffview.nvim',
     requires = 'nvim-lua/plenary.nvim'
   },
