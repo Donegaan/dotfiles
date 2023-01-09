@@ -31,4 +31,5 @@ i3lock \
 --indicator           \
 --time-str="%H:%M"  \
 --keylayout 1         \
---wrong-text="Incorrect Password"
+--wrong-text="Incorrect Password" \
+& sleep 15 && xset s activate
