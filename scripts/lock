@@ -32,4 +32,4 @@ i3lock \
 --time-str="%H:%M"  \
 --keylayout 1         \
 --wrong-text="Incorrect Password" \
-& sleep 15 && xset s activate
+& sleep 10 && xset dpms force off

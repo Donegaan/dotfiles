@@ -179,6 +179,9 @@ exec teams
 exec discord
 exec spotify
 
+## Listen for lock event and run i3lock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/scripts/lock --nofork
+
 ###############################################################################
 # i3 Config Partials
 ###############################################################################
