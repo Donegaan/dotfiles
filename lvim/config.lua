@@ -102,8 +102,12 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.telescope.pickers.layout_strategy = "horizontal"
-lvim.builtin.telescope.pickers.layout_config = { width = 0.95, }
+lvim.builtin.telescope.pickers.find_files.previewer = nil
+lvim.builtin.telescope.pickers.find_files.theme = nil
+lvim.builtin.telescope.pickers.git_files.previewer = nil
+lvim.builtin.telescope.pickers.git_files.theme = nil
+lvim.builtin.telescope.pickers.live_grep.previewer = nil
+lvim.builtin.telescope.pickers.live_grep.theme = nil
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.endwise = {
   enable = true,
