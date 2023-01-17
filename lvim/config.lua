@@ -102,6 +102,8 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.telescope.pickers.layout_strategy = "horizontal"
+lvim.builtin.telescope.pickers.layout_config = { width = 0.95, }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.endwise = {
   enable = true,
