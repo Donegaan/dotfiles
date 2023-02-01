@@ -37,6 +37,7 @@ asdf_tools=(
 "lazygit"
 "neovim"
 "nodejs"
+"rclone"
 "ripgrep"
 "ruby"
 "zoxide"

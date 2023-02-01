@@ -6,6 +6,7 @@ github-cli 2.19.0
 lazygit 0.35
 neovim stable
 nodejs lts
+rclone latest
 ripgrep 13.0.0
 ruby 2.6.1 2.7.0 2.7.5
 zoxide 0.8.3
