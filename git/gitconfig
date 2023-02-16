@@ -25,13 +25,14 @@
 
 [interactive]
   diffFilter = delta --color-only
-  light = true      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-  side-by-side = true
-  line-numbers = true
+  line-numbers = false
+
+[include]
+  path = ~/dotfiles/git/tokyonight_moon.gitconfig
 
 [delta]
-  features = side-by-side line-numbers navigate
-  syntax-theme = Monokai Extended
+  features = side-by-side navigate
+  syntax-theme = tokyonight_moon
 
 [merge]
   conflictstyle = diff3
