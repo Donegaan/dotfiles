@@ -6,7 +6,6 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
-
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "100"
 vim.opt.scrolloff = 5 -- Determines the number of context lines you would like to see above and below the cursor
@@ -55,7 +54,7 @@ lvim.builtin.telescope.defaults.mappings = {
 lvim.builtin.which_key.mappings["A"] = { "<cmd>:A<CR>", "Go to associated rails file" }
 lvim.builtin.which_key.mappings["R"] = { "<cmd>:R<CR>", "Go to related rails file" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["sw"] = { "<cmd>Telescope live_grep<CR>", "Search words" }
+lvim.builtin.which_key.mappings["t"] = { "<cmd>Telescope live_grep<CR>", "Search words" }
 lvim.builtin.which_key.mappings["p"] = {
   name = "+Package",
   I = { "<cmd>Mason<CR>", "Mason Installer" },
@@ -66,13 +65,6 @@ lvim.builtin.which_key.mappings["p"] = {
   s = { "<cmd>PackerSync<cr>", "Sync" },
   S = { "<cmd>PackerStatus<cr>", "Status" },
   u = { "<cmd>PackerUpdate<cr>", "Update" },
-}
-
-lvim.builtin.which_key.mappings["t"] = {
-  name = "+ToggleTerm",
-  f = { "<cmd>ToggleTerm direction=float<cr>", "ToggleTerm float" },
-  h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "ToggleTerm horizontal" },
-  v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "ToggleTerm vertical" },
 }
 lvim.builtin.which_key.mappings["S"] = {
   name = "+Session",

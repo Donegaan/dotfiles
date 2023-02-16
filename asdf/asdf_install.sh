@@ -30,7 +30,7 @@ function install_asdf_package() {
 
 asdf_tools=(
 "bat"
-"difftastic"
+"delta"
 "fd"
 "fzf"
 "github-cli"

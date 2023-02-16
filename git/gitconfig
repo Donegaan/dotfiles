@@ -19,16 +19,22 @@
 [rebase]
 	autoStash = true
 	
-# Use a pager for large output, just like other git commands.
-[pager]
-	difftool = true
-	
-[diff]
-	tool = difftastic
-	external = difft
-	
-[difftool]
-  prompt = false
+[core]
+	editor = lvim 
+  pager = delta
 
-[difftool "difftastic"]
-  cmd = difft "$LOCAL" "$REMOTE"
+[interactive]
+  diffFilter = delta --color-only
+  light = true      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  side-by-side = true
+  line-numbers = true
+
+[delta]
+  features = side-by-side line-numbers navigate
+  syntax-theme = Monokai Extended
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default

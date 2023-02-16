@@ -10,3 +10,4 @@ rclone latest
 ripgrep 13.0.0
 ruby 2.6.1 2.7.0 2.7.5
 zoxide 0.8.3
+delta 0.15.1

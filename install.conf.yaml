@@ -12,6 +12,7 @@
     ~/.bash_prompt: bash/bash_prompt
     ~/.gitconfig: git/gitconfig
     ~/.git-completion.bash: git/git_completion
+    ~/.config/lazygit/config.yml: git/lazygit_config.yml
     ~/.zshrc: zsh/zshrc
     ~/.p10k.zsh: zsh/.p10k.zsh
     ~/.oh-my-zsh/custom/aliases.zsh: zsh/alias.sh
@@ -25,6 +26,8 @@
     ~/.config/terminator/config: terminator-config
     ~/.config/nvim: nvim
     ~/.config/lvim/config.lua: lvim/config.lua
+    ~/.config/lvim/after/plugin/highlights.vim: lvim/after/plugin/highlights.vim
+    ~/.config/lvim/lua/user/theme.lua: lvim/lua/user/theme.lua
     ~/.config/regolith2/Xresources: regolith/Xresources
     ~/.config/regolith2/i3: regolith/i3
     ~/.config/regolith2/i3xrocks: regolith/i3xrocks
