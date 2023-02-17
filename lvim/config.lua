@@ -203,10 +203,6 @@ lvim.plugins = {
     end,
   },
   {
-    'sindrets/diffview.nvim',
-    requires = 'nvim-lua/plenary.nvim'
-  },
-  {
     "nvim-neotest/neotest",
     requires = {
       "nvim-lua/plenary.nvim",

@@ -18,10 +18,12 @@
     ~/.oh-my-zsh/custom/aliases.zsh: zsh/alias.sh
     ~/.oh-my-zsh/custom/work-aliases.zsh: dotfiles-work/work-alias.sh
     ~/.oh-my-zsh/custom/exports.zsh: zsh/exports.sh
+    ~/.oh-my-zsh/custom/bindkey.zsh: zsh/bindkey.sh
     ~/.irbrc: irbrc
     ~/.asdfrc: asdf/asdfrc
     ~/.tool-versions: asdf/.tool-versions
     ~/.default-gems: asdf/.default-gems
+    ~/.default-npm-packages: asdf/.default-npm-packages
     ~/.config/jrnl/jrnl.yaml: journal/jrnl.yaml
     ~/.config/terminator/config: terminator-config
     ~/.config/nvim: nvim

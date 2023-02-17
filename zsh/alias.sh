@@ -38,13 +38,5 @@ alias dot="vim ~/dotfiles"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Git
-alias gwt='git worktree'
-alias gwta='git worktree add'
-alias gwtls='git worktree list'
-alias gwtlo='git worktree lock'
-alias gwtmv='git worktree move'
-alias gwtpr='git worktree prune'
-alias gwtrm='git worktree remove'
-alias gwtulo='git worktree unlock'
 alias gdft='git difftool'
 alias gcof='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff {1} --color=always" --pointer="" | xargs git checkout'
