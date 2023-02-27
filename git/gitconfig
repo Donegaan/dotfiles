@@ -4,6 +4,10 @@
 [user]
 	name = Andrew D
 	email = 24252685+Donegaan@users.noreply.github.com
+	
+[alias]
+  migrations = "!f() { git diff --name-only $1..$2 db/migrate | tr -d '[A-Za-z/_.]'; }; f"
+
 [submodule]
 	recurse = true
 	
