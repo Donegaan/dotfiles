@@ -33,6 +33,7 @@
     ~/.config/regolith2/Xresources: regolith/Xresources
     ~/.config/regolith2/i3: regolith/i3
     ~/.config/regolith2/i3xrocks: regolith/i3xrocks
+    ~/.config/karabiner: karabiner
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -1,0 +1,1 @@
+{"title":"","rules":[{"description":"Caps Lock -> Esc + Ctrl","manipulators":[{"type":"basic","from":{"key_code":"caps_lock"},"to_if_alone":[{"repeat":true,"key_code":"escape"}],"to_if_held_down":[{"repeat":true,"key_code":"left_control"}]}]}]}
