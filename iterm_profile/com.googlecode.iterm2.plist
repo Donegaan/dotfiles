@@ -1773,6 +1773,10 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>NeverWarnAboutShortLivedSessions_A2C818C5-31D2-49F4-A1C0-B2E55EFA7219</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_A2C818C5-31D2-49F4-A1C0-B2E55EFA7219_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
