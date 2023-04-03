@@ -8,9 +8,9 @@ an executable
 ]]
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "100"
-vim.opt.scrolloff = 5 -- Determines the number of context lines you would like to see above and below the cursor
+vim.opt.scrolloff = 5     -- Determines the number of context lines you would like to see above and below the cursor
 vim.opt.ignorecase = true -- Ignore case in search
-vim.opt.smartcase = true -- Case-sensitive search when search term contains uppercase characters. Otherwise, case-sensitive search.  timeoutlen = 200, -- Time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.smartcase = true  -- Case-sensitive search when search term contains uppercase characters. Otherwise, case-sensitive search.  timeoutlen = 200, -- Time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.cmdheight = 1
 
 -- general
@@ -187,6 +187,7 @@ lvim.plugins = {
   { "tpope/vim-rails" },
   { "tpope/vim-surround" },
   { "RRethy/nvim-treesitter-endwise" },
+  { "nvim-treesitter/nvim-treesitter-context" },
   {
     "shatur/neovim-session-manager",
     requires = 'nvim-lua/plenary.nvim',
