@@ -21,6 +21,7 @@ alias vsc='code'
 # Ubuntu
 alias open="xdg-open" # Opens file explorer on ubuntu 20.04
 alias lock='gnome-screensaver-command -l'
+alias full_update='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y'
 
 # Vim
 alias v='lvim'
