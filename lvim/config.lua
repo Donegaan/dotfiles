@@ -55,6 +55,7 @@ lvim.builtin.which_key.mappings["A"] = { "<cmd>:A<CR>", "Go to associated rails 
 lvim.builtin.which_key.mappings["R"] = { "<cmd>:R<CR>", "Go to related rails file" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = { "<cmd>Telescope live_grep<CR>", "Search words" }
+lvim.builtin.which_key.mappings["W"] = { "<cmd>Telescope grep_string<CR>", "Find word" }
 lvim.builtin.which_key.mappings["p"] = {
   name = "+Package",
   I = { "<cmd>Mason<CR>", "Mason Installer" },
@@ -109,6 +110,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
   "javascript",
+  "java",
   "json",
   "lua",
   "python",
@@ -188,6 +190,10 @@ lvim.plugins = {
   { "tpope/vim-surround" },
   { "RRethy/nvim-treesitter-endwise" },
   { "nvim-treesitter/nvim-treesitter-context" },
+  {
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  },
   {
     "shatur/neovim-session-manager",
     requires = 'nvim-lua/plenary.nvim',
