@@ -5,6 +5,7 @@ cd ~/workspace/journal
 mkdir -p work life
 
 /home/linuxbrew/.linuxbrew/bin/jrnl -from "this year" --format md --file work/work_journal_"$(date +%Y)".md
+/home/linuxbrew/.linuxbrew/bin/jrnl todo --format md --file work/todo.md
 /home/linuxbrew/.linuxbrew/bin/jrnl life --format md --file life/"$OSTYPE"_life_journal.md
 
 git pull

@@ -17,6 +17,8 @@ alias je='jrnl -today --edit'
 alias jt='jrnl -today'
 alias jy='jrnl -on yesterday'
 alias jf='jrnl -on friday'
+alias jte='jrnl todo --edit'
+alias jtt='jrnl -to today todo'
 alias vsc='code'
 alias journal_update='~/dotfiles/journal/journal_export.sh'
 
