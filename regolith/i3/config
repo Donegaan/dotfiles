@@ -163,24 +163,20 @@ mouse_warping none
 
 ## Open apps on specific workspaces
 
-assign [class="(?i)code"] $ws1
 assign [class="(?i)firefox"] $ws2
-assign [class="(?i)terminator"] $ws3
 assign [class="(?i)teams"] $ws4
 assign [class="(?i)discord"] $ws5
-assign [class="(?i)spotify"] $ws6
+assign [class="(?i)spotify"] $ws8
 assign [class="(?i)signal"] $ws7
 
 ## Startup apps
-exec code
 exec firefox
 exec terminator
 exec teams
 exec discord
-exec spotify
 
 ## Listen for lock event and run i3lock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/scripts/lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/scripts/lock --nofork
 
 ###############################################################################
 # i3 Config Partials

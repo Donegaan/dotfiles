@@ -7,9 +7,10 @@
 
 ### Theme
 regolith.look.path: /usr/share/regolith-look/dracula
-regolith.wallpaper.file: Pictures/Wallpapers/JellyJam-OceanSun.png
+regolith.wallpaper.file: ~/Pictures/Wallpapers/JellyJam-OceanSun.png
+regolith.lockscreen.wallpaper.file: ~/Pictures/Wallpapers/JellyJam-OceanSun.png
 gtk.font_name: Ubuntu 12
 gtk.monospace_font_name: JetBrainsMono Nerd Font Regular 12
 
 ### Lock screen
-i3-wm.program.lock: ~/dotfiles/scripts/lock
+! i3-wm.program.lock: ~/dotfiles/scripts/lock
