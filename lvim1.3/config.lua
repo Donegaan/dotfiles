@@ -1,6 +1,7 @@
 --[[
  `lvim` is the global options object
 ]]
+reload("user.plugins")
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
@@ -20,6 +21,7 @@ lvim.format_on_save = {
 }
 lvim.colorscheme = "tokyonight-moon"
 lvim.transparent_window = true
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -53,20 +55,43 @@ lvim.builtin.telescope.defaults.mappings = {
   },
 }
 -- -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["A"] = { "<cmd>:A<CR>", "Go to associated rails file" }
+lvim.builtin.which_key.mappings["R"] = { "<cmd>:R<CR>", "Go to related rails file" }
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["t"] = { "<cmd>Telescope live_grep<CR>", "Search words" }
+lvim.builtin.which_key.mappings["W"] = { "<cmd>Telescope grep_string<CR>", "Find word" }
+lvim.builtin.which_key.mappings["S"] = {
+  name = "+Session",
+  l = { "<cmd>SessionManager! load_last_session<cr>", "Load last session" },
+  s = { "<cmd>SessionManager! save_current_session<cr>", "Save this session" },
+  d = { "<cmd>SessionManager! delete_session<cr>", "Delete session" },
+  f = { "<cmd>SessionManager! load_session<cr>", "Search sessions" },
+  c = { "<cmd>SessionManager! load_current_dir_session<cr>", "Load current directory session" },
+}
+lvim.builtin.which_key.mappings["n"] = {
+  name = "Neotest",
+  a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" },
+  f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run File" },
+  F = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Debug File" },
+  l = { "<cmd>lua require('neotest').run.run_last()<cr>", "Run Last" },
+  L = { "<cmd>lua require('neotest').run.run_last({ strategy = 'dap' })<cr>", "Debug Last" },
+  n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" },
+  N = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest" },
+  o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" },
+  x = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
+  S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
+}
 
+reload("user.telescope")
+
+-- lvim.builtin.telescope.defaults.layout_config.width = 0.5
 lvim.builtin.alpha.active = false
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.telescope.pickers.find_files.previewer = nil
-lvim.builtin.telescope.pickers.find_files.theme = nil
-lvim.builtin.telescope.pickers.git_files.previewer = nil
-lvim.builtin.telescope.pickers.git_files.theme = nil
-lvim.builtin.telescope.pickers.live_grep.previewer = nil
-lvim.builtin.telescope.pickers.live_grep.theme = nil
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.endwise = {
   enable = true,
@@ -126,62 +151,14 @@ linters.setup {
     filetypes = { "javascript", "javascriptreact" },
   },
 }
--- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
-lvim.plugins = {
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
-  { "tpope/vim-rails" },
-  { "tpope/vim-surround" },
-  { "RRethy/nvim-treesitter-endwise" },
-  { "nvim-treesitter/nvim-treesitter-context" },
-  {
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  },
-  {
-    "shatur/neovim-session-manager",
-    requires = 'nvim-lua/plenary.nvim',
-    require('session_manager').setup({
-      autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
-    })
-  },
-  {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup {
-        trigger_events = { "BufLeave" },
-      }
-    end,
-  },
-  {
-    "nvim-neotest/neotest",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "olimorris/neotest-rspec",
-    },
-    config = function()
-      require('neotest').setup({
-        adapters = {
-          require('neotest-rspec'),
-        }
-      })
-    end
-  },
-  {
-    'sudormrfbin/cheatsheet.nvim',
-    requires = {
-      { 'nvim-telescope/telescope.nvim' },
-      { 'nvim-lua/popup.nvim' },
-      { 'nvim-lua/plenary.nvim' },
-    }
-  },
-}
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    require("user.theme").telescope_theme()
+  end,
+})
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "zsh",
   callback = function()
