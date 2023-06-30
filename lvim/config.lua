@@ -191,10 +191,6 @@ linters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  { "tpope/vim-rails" },
-  { "tpope/vim-surround" },
-  { "RRethy/nvim-treesitter-endwise" },
-  { "nvim-treesitter/nvim-treesitter-context" },
   {
     "github/copilot.vim",
     config = function()
@@ -215,21 +211,6 @@ lvim.plugins = {
     run = function() vim.fn["mkdp#util#install"]() end,
   },
   {
-    "shatur/neovim-session-manager",
-    requires = 'nvim-lua/plenary.nvim',
-    require('session_manager').setup({
-      autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
-    })
-  },
-  {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup {
-        trigger_events = { "BufLeave" },
-      }
-    end,
-  },
-  {
     "nvim-neotest/neotest",
     requires = {
       "nvim-lua/plenary.nvim",
@@ -245,6 +226,23 @@ lvim.plugins = {
       })
     end
   },
+  { "nvim-treesitter/nvim-treesitter-context" },
+  {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        trigger_events = { "BufLeave" },
+      }
+    end,
+  },
+  { "RRethy/nvim-treesitter-endwise" },
+  {
+    "shatur/neovim-session-manager",
+    requires = 'nvim-lua/plenary.nvim',
+    require('session_manager').setup({
+      autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+    })
+  },
   {
     'sudormrfbin/cheatsheet.nvim',
     requires = {
@@ -253,6 +251,8 @@ lvim.plugins = {
       { 'nvim-lua/plenary.nvim' },
     }
   },
+  { "tpope/vim-rails" },
+  { "tpope/vim-surround" },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
