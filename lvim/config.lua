@@ -57,7 +57,9 @@ lvim.builtin.telescope.defaults.mappings = {
 lvim.builtin.which_key.mappings["A"] = { "<cmd>:A<CR>", "Go to associated rails file" }
 lvim.builtin.which_key.mappings["R"] = { "<cmd>:R<CR>", "Go to related rails file" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["t"] = { "<cmd>Telescope live_grep<CR>", "Search words" }
+lvim.builtin.which_key.mappings["t"] = {
+  "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live grep args"
+}
 lvim.builtin.which_key.mappings["W"] = { "<cmd>Telescope grep_string<CR>", "Find word" }
 lvim.builtin.which_key.mappings["p"] = {
   name = "+Package",
@@ -104,6 +106,9 @@ lvim.builtin.telescope.pickers.git_files.previewer = nil
 lvim.builtin.telescope.pickers.git_files.theme = nil
 lvim.builtin.telescope.pickers.live_grep.previewer = nil
 lvim.builtin.telescope.pickers.live_grep.theme = nil
+lvim.builtin.telescope.on_config_done = function(telescope)
+  pcall(telescope.load_extension, "live_grep_args")
+end
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.endwise = {
   enable = true,
@@ -226,6 +231,7 @@ lvim.plugins = {
       })
     end
   },
+  { "nvim-telescope/telescope-live-grep-args.nvim" },
   { "nvim-treesitter/nvim-treesitter-context" },
   {
     "Pocco81/auto-save.nvim",
