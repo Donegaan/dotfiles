@@ -12,3 +12,10 @@ git pull
 git add .
 git commit -m "Adding journal entries"
 git push
+
+cd ~/workspace/notes
+
+git pull
+git add "*.md"
+git commit -m "Adding only markdown notes"
+git push
