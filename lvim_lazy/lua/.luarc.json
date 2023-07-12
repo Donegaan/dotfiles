@@ -1,0 +1,13 @@
+{
+    "workspace.library": [
+        "/home/andrew/.asdf/installs/neovim/0.9.0/share/nvim/runtime",
+        "/home/andrew/.local/share/lunarvim/lvim",
+        "/home/andrew/.local/share/lunarvim/site/pack/lazy/opt/neodev.nvim/types/stable",
+        "${3rd}/busted/library",
+        "${3rd}/luassert/library",
+        "/home/andrew/.local/share/lunarvim/site/pack/lazy/opt/telescope.nvim/lua",
+        "/home/andrew/.local/share/lunarvim/site/pack/lazy/opt/plenary.nvim/lua",
+        "/home/andrew/.local/share/lunarvim/site/pack/lazy/opt/LuaSnip/lua",
+        "${3rd}/luv/library"
+    ]
+}
