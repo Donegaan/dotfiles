@@ -58,6 +58,7 @@ lvim.builtin.telescope.defaults.mappings = {
 -- Use which-key to add extra bindings with the leader-key prefix
 -- If I want to toggleterm with command, copy Astrovim function: https://github.com/AstroNvim/AstroNvim/blob/80f650ab0c7dc3a93c9fe372010919be936d7eb9/lua/core/utils/init.lua#L283
 lvim.builtin.which_key.mappings["A"] = { "<cmd>:A<CR>", "Go to associated rails file" }
+lvim.builtin.which_key.mappings["gO"] = { "<cmd>:OpenInGHFileLines <CR>", "Open in GitHub Repo" }
 lvim.builtin.which_key.mappings["R"] = { "<cmd>:R<CR>", "Go to related rails file" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
@@ -234,6 +235,7 @@ lvim.plugins = {
       })
     end
   },
+  { "almo7aya/openingh.nvim" },
   { "nvim-telescope/telescope-live-grep-args.nvim" },
   { "nvim-treesitter/nvim-treesitter-context" },
   {
