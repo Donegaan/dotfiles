@@ -10,5 +10,8 @@ vim.keymap.set(
   ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
   { desc = "Live grep args" }
 )
+vim.keymap.set("n", "<leader>A", "<cmd>:A<CR>", { desc = "Go to associated rails file" })
+vim.keymap.set("n", "gO", "<cmd>:OpenInGHFileLines <CR>", { desc = "Open in GitHub Repo" })
+vim.keymap.set("n", "R", "<cmd>:R<CR>", { desc = "Go to related rails file" })
 
 vim.keymap.set("i", "jk", "<ESC>")
