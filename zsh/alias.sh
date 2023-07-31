@@ -28,7 +28,7 @@ alias lock='gnome-screensaver-command -l'
 alias full_update='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y'
 
 # Vim
-alias v='lvim'
+alias v='nvim'
 alias v.='v .'
 alias vim='v'
 

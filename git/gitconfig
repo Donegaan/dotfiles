@@ -24,7 +24,7 @@
 	autoStash = true
 	
 [core]
-	editor = lvim 
+	editor = nvim 
   pager = delta
 
 [interactive]
