@@ -1,4 +1,4 @@
--- TODO: Sort out live grep args actions and neotest
+-- TODO: Sort out live grep args actions
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
