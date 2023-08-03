@@ -9,9 +9,9 @@ an executable
 
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "100"
-vim.opt.scrolloff = 5     -- Determines the number of context lines you would like to see above and below the cursor
+vim.opt.scrolloff = 5 -- Determines the number of context lines you would like to see above and below the cursor
 vim.opt.ignorecase = true -- Ignore case in search
-vim.opt.smartcase = true  -- Case-sensitive search when search term contains uppercase characters. Otherwise, case-sensitive search.  timeoutlen = 200, -- Time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.smartcase = true -- Case-sensitive search when search term contains uppercase characters. Otherwise, case-sensitive search.  timeoutlen = 200, -- Time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.cmdheight = 1
 -- vim.opt.foldmethod = "expr" -- code folding
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -39,63 +39,62 @@ lvim.keys.insert_mode["jk"] = "<ESC>"
 local _, actions = pcall(require, "telescope.actions")
 local _, lga_actions = pcall(require, "telescope-live-grep-args.actions")
 lvim.builtin.telescope.defaults.mappings = {
-  -- for input mode
-  i = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-    ["<C-n>"] = actions.cycle_history_next,
-    ["<C-p>"] = actions.cycle_history_prev,
-    ["<C-s>"] = lga_actions.quote_prompt(),
-    ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-  },
-  -- for normal mode
-  n = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-  },
+	-- for input mode
+	i = {
+		["<C-j>"] = actions.move_selection_next,
+		["<C-k>"] = actions.move_selection_previous,
+		["<C-n>"] = actions.cycle_history_next,
+		["<C-p>"] = actions.cycle_history_prev,
+		["<C-s>"] = lga_actions.quote_prompt(),
+		["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+	},
+	-- for normal mode
+	n = {
+		["<C-j>"] = actions.move_selection_next,
+		["<C-k>"] = actions.move_selection_previous,
+	},
 }
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- If I want to toggleterm with command, copy Astrovim function: https://github.com/AstroNvim/AstroNvim/blob/80f650ab0c7dc3a93c9fe372010919be936d7eb9/lua/core/utils/init.lua#L283
-lvim.builtin.which_key.mappings["A"] = { "<cmd>:A<CR>", "Go to associated rails file" }
 lvim.builtin.which_key.mappings["gO"] = { "<cmd>:OpenInGHFileLines <CR>", "Open in GitHub Repo" }
-lvim.builtin.which_key.mappings["R"] = { "<cmd>:R<CR>", "Go to related rails file" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
-  "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live grep args"
+	"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
+	"Live grep args",
 }
 lvim.builtin.which_key.mappings["W"] = { "<cmd>Telescope grep_string<CR>", "Find word" }
 lvim.builtin.which_key.mappings["p"] = {
-  name = "+Package",
-  I = { "<cmd>Mason<CR>", "Mason Installer" },
-  U = { "<cmd>MasonToolsUpdate<CR>", "Mason Update" },
-  c = { "<cmd>PackerCompile<cr>", "Compile" },
-  i = { "<cmd>PackerInstall<cr>", "Install" },
-  r = { "<cmd>lua require('lv-utils').reload_lv_config()<cr>", "Reload" },
-  s = { "<cmd>PackerSync<cr>", "Sync" },
-  S = { "<cmd>PackerStatus<cr>", "Status" },
-  u = { "<cmd>PackerUpdate<cr>", "Update" },
+	name = "+Package",
+	I = { "<cmd>Mason<CR>", "Mason Installer" },
+	U = { "<cmd>MasonToolsUpdate<CR>", "Mason Update" },
+	c = { "<cmd>PackerCompile<cr>", "Compile" },
+	i = { "<cmd>PackerInstall<cr>", "Install" },
+	r = { "<cmd>lua require('lv-utils').reload_lv_config()<cr>", "Reload" },
+	s = { "<cmd>PackerSync<cr>", "Sync" },
+	S = { "<cmd>PackerStatus<cr>", "Status" },
+	u = { "<cmd>PackerUpdate<cr>", "Update" },
 }
 lvim.builtin.which_key.mappings["S"] = {
-  name = "+Session",
-  l = { "<cmd>SessionManager! load_last_session<cr>", "Load last session" },
-  s = { "<cmd>SessionManager! save_current_session<cr>", "Save this session" },
-  d = { "<cmd>SessionManager! delete_session<cr>", "Delete session" },
-  f = { "<cmd>SessionManager! load_session<cr>", "Search sessions" },
-  c = { "<cmd>SessionManager! load_current_dir_session<cr>", "Load current directory session" },
+	name = "+Session",
+	l = { "<cmd>SessionManager! load_last_session<cr>", "Load last session" },
+	s = { "<cmd>SessionManager! save_current_session<cr>", "Save this session" },
+	d = { "<cmd>SessionManager! delete_session<cr>", "Delete session" },
+	f = { "<cmd>SessionManager! load_session<cr>", "Search sessions" },
+	c = { "<cmd>SessionManager! load_current_dir_session<cr>", "Load current directory session" },
 }
 lvim.builtin.which_key.mappings["n"] = {
-  name = "Neotest",
-  a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" },
-  f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run File" },
-  F = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Debug File" },
-  l = { "<cmd>lua require('neotest').run.run_last()<cr>", "Run Last" },
-  L = { "<cmd>lua require('neotest').run.run_last({ strategy = 'dap' })<cr>", "Debug Last" },
-  n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" },
-  N = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest" },
-  o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" },
-  x = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
-  S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
+	name = "Neotest",
+	a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" },
+	f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run File" },
+	F = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Debug File" },
+	l = { "<cmd>lua require('neotest').run.run_last()<cr>", "Run Last" },
+	L = { "<cmd>lua require('neotest').run.run_last({ strategy = 'dap' })<cr>", "Debug Last" },
+	n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" },
+	N = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest" },
+	o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" },
+	x = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
+	S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
 }
 -- User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -111,26 +110,26 @@ lvim.builtin.telescope.pickers.git_files.theme = nil
 lvim.builtin.telescope.pickers.live_grep.previewer = nil
 lvim.builtin.telescope.pickers.live_grep.theme = nil
 lvim.builtin.telescope.on_config_done = function(telescope)
-  pcall(telescope.load_extension, "live_grep_args")
+	pcall(telescope.load_extension, "live_grep_args")
 end
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.endwise = {
-  enable = true,
+	enable = true,
 }
 lvim.builtin.treesitter.auto_install = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "java",
-  "json",
-  "lua",
-  "python",
-  "css",
-  "yaml",
-  "ruby",
+	"bash",
+	"c",
+	"javascript",
+	"java",
+	"json",
+	"lua",
+	"python",
+	"css",
+	"yaml",
+	"ruby",
 }
 
 -- generic LSP settings
@@ -175,95 +174,97 @@ lvim.builtin.treesitter.ensure_installed = {
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  {
-    --     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-    command = "prettier",
-    --     ---@usage arguments to pass to the formatter
-    --     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    --     extra_args = { "--print-with", "100" },
-    --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "javascript", "javascriptreact" },
-  },
-}
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+	{
+		--     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+		command = "prettier",
+		--     ---@usage arguments to pass to the formatter
+		--     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+		--     extra_args = { "--print-with", "100" },
+		--     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+		filetypes = { "javascript", "javascriptreact" },
+	},
+})
 
 -- -- set additional linters
-local linters = require "lvim.lsp.null-ls.linters"
-linters.setup {
-  {
-    command = "eslint_d",
-    ---@usage specify which filetypes to enable. By default, providers will attach to all the filetypes it supports.
-    filetypes = { "javascript", "javascriptreact" },
-  },
-}
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+	{
+		command = "eslint_d",
+		---@usage specify which filetypes to enable. By default, providers will attach to all the filetypes it supports.
+		filetypes = { "javascript", "javascriptreact" },
+	},
+})
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "github/copilot.vim",
-    config = function()
-      -- copilot assume mapped
-      vim.g.copilot_assume_mapped = true
-      vim.g.copilot_no_tab_map = true
-    end,
-  },
-  {
-    "hrsh7th/cmp-copilot",
-    config = function()
-      lvim.builtin.cmp.formatting.source_names["copilot"] = "( )"
-      table.insert(lvim.builtin.cmp.sources, 2, { name = "copilot" })
-    end,
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  },
-  {
-    "nvim-neotest/neotest",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "olimorris/neotest-rspec",
-    },
-    config = function()
-      require('neotest').setup({
-        adapters = {
-          require('neotest-rspec'),
-        }
-      })
-    end
-  },
-  { "almo7aya/openingh.nvim" },
-  { "nvim-telescope/telescope-live-grep-args.nvim" },
-  { "nvim-treesitter/nvim-treesitter-context" },
-  {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup {
-        trigger_events = { "BufLeave" },
-      }
-    end,
-  },
-  { "RRethy/nvim-treesitter-endwise" },
-  {
-    "shatur/neovim-session-manager",
-    requires = 'nvim-lua/plenary.nvim',
-    require('session_manager').setup({
-      autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
-    })
-  },
-  {
-    'sudormrfbin/cheatsheet.nvim',
-    requires = {
-      { 'nvim-telescope/telescope.nvim' },
-      { 'nvim-lua/popup.nvim' },
-      { 'nvim-lua/plenary.nvim' },
-    }
-  },
-  { "tpope/vim-rails" },
-  { "tpope/vim-surround" },
+	{
+		"github/copilot.vim",
+		config = function()
+			-- copilot assume mapped
+			vim.g.copilot_assume_mapped = true
+			vim.g.copilot_no_tab_map = true
+		end,
+	},
+	{
+		"hrsh7th/cmp-copilot",
+		config = function()
+			lvim.builtin.cmp.formatting.source_names["copilot"] = "( )"
+			table.insert(lvim.builtin.cmp.sources, 2, { name = "copilot" })
+		end,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
+	{
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+			"olimorris/neotest-rspec",
+		},
+		config = function()
+			require("neotest").setup({
+				adapters = {
+					require("neotest-rspec"),
+				},
+			})
+		end,
+	},
+	{ "almo7aya/openingh.nvim" },
+	{ "nvim-telescope/telescope-live-grep-args.nvim" },
+	{ "nvim-treesitter/nvim-treesitter-context" },
+	{
+		"Pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup({
+				trigger_events = { "BufLeave" },
+			})
+		end,
+	},
+	{ "RRethy/nvim-treesitter-endwise" },
+	{
+		"shatur/neovim-session-manager",
+		requires = "nvim-lua/plenary.nvim",
+		require("session_manager").setup({
+			autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+		}),
+	},
+	{
+		"sudormrfbin/cheatsheet.nvim",
+		requires = {
+			{ "nvim-telescope/telescope.nvim" },
+			{ "nvim-lua/popup.nvim" },
+			{ "nvim-lua/plenary.nvim" },
+		},
+	},
+	{ "tpope/vim-rails" },
+	{ "tpope/vim-surround" },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -281,11 +282,11 @@ lvim.plugins = {
 --   end,
 -- })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "zsh",
-  callback = function()
-    -- let treesitter use bash highlight for zsh files as well
-    require("nvim-treesitter.highlight").attach(0, "bash")
-  end,
+	pattern = "zsh",
+	callback = function()
+		-- let treesitter use bash highlight for zsh files as well
+		require("nvim-treesitter.highlight").attach(0, "bash")
+	end,
 })
 -- vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
 --   pattern = "*",
