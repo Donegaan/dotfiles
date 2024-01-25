@@ -7,8 +7,9 @@ alias path='echo -e ${PATH//:/\\n}' # Print each PATH entry on a separate line
 alias cat='bat'
 alias python='python3'
 alias docker='nocorrect docker'
-alias rails='bundle exec bin/rails'
-alias rspec='bundle exec bin/rspec'
+# If bin/rails exists, use that, otherwise use the rails command
+alias rails='[[ -x bin/rails ]] && bundle exec bin/rails || command bundle exec rails'
+alias rspec='[[ -x bin/rspec ]] && bundle exec bin/rspec || command bundle exec rspec'
 alias rc='rails console -- --nomultiline'
 alias tldr='nocorrect tldr'
 alias java='nocorrect java'
