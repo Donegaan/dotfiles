@@ -1,30 +1,11 @@
 ###############################################################################
-# i3 config file for the Regolith Desktop Environment
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-#
+# wm config file for the Regolith Desktop Environment
 ###############################################################################
 #
 # In this config file many values are taken from Xresources with the directive
 # set_from_resource:
 #
-# set_from_resource <i3 variable name> <Xresources key> <default value>
-#
-# This configuration file utilizes Xresource variables to change configuration
-# without having to make a copy of this config file.
-# The benefit to not copying this file is easier upgrades in the future.
-# To update a value in this config without making a copy, update the Xresource
-# value in the file ~/.config/regolith2/Xresources.
-#
-# For example, to change the bar position to the top of the screen this is the
-# i3 config entry in this file:
-# set_from_resource $wm.bar.position wm.bar.position bottom
-#
-# So add this line to ~/.config/regolith2/Xresources to change it's value:
-# wm.bar.position: top
-#
-# Reload i3 after making Xresource changes.  Learn more at
-# https://regolith-linux.org/docs/howtos/override-xres/
+# set_from_resource <variable name> <Xresources key> <default value>
 #
 ###############################################################################
 #
@@ -44,7 +25,7 @@ set_from_resource $alt  wm.alt Mod1
 
 ###############################################################################
 # Workspace Names
-# These are the labels which define each i3 workspace.
+# These are the labels which define each workspace.
 ###############################################################################
 
 set_from_resource $ws1  wm.workspace.01.name "1"
@@ -83,7 +64,6 @@ set_from_resource $ws8_key  wm.workspace.08.key 8
 set_from_resource $ws9_key  wm.workspace.09.key 9
 set_from_resource $ws10_key wm.workspace.10.key 0
 
-
 ###############################################################################
 # Workspace Screens
 # These are the screens that each workspace is assigned to
@@ -98,10 +78,10 @@ workspace "7" output eDP
 workspace "8" output eDP
 
 ###############################################################################
-# i3 Colors and Fonts
+# Colors and Fonts
 ###############################################################################
 
-# Create variables from Xresources for i3's look.
+# Create variables from Xresources for wm look
 set_from_resource $focused.color.border wm.client.focused.color.border "#002b36"
 set_from_resource $focused.color.background wm.client.focused.color.background "#586e75"
 set_from_resource $focused.color.text wm.client.focused.color.text "#fdf6e3"
@@ -134,7 +114,7 @@ client.focused_inactive $focused_inactive.color.border     $focused_inactive.col
 client.unfocused        $unfocused.color.border            $unfocused.color.background        $unfocused.color.text              $unfocused.color.indicator         $unfocused.color.child_border
 client.urgent           $urgent.color.border               $urgent.color.background           $urgent.color.text                 $urgent.color.indicator            $urgent.color.child_border
 
-# Create variables from Xresources for i3bars's look.
+# Create variables from Xresources for bar look
 set_from_resource $wm.bar.background.color wm.bar.background.color "#002b36"
 set_from_resource $wm.bar.statusline.color wm.bar.statusline.color "#93a1a1"
 set_from_resource $wm.bar.separator.color wm.bar.separator.color "#268bd2"
@@ -155,36 +135,29 @@ set_from_resource $wm.bar.workspace.urgent.border.color wm.bar.workspace.urgent.
 set_from_resource $wm.bar.workspace.urgent.background.color wm.bar.workspace.urgent.background.color "#dc322f"
 set_from_resource $wm.bar.workspace.urgent.text.color wm.bar.workspace.urgent.text.color "#fdf6e3"
 
-# Sets i3 font for dialogs
+# Sets wm font for dialogs
 set_from_resource $wm.font gtk.font_name Sans 13
 font pango:$wm.font
-
-mouse_warping none
 
 ## Open apps on specific workspaces
 
 assign [class="(?i)firefox"] $ws2
 assign [class="(?i)teams"] $ws4
 assign [class="(?i)discord"] $ws5
-assign [class="(?i)spotify"] $ws8
 assign [class="(?i)signal"] $ws7
 
-## Startup apps
-exec firefox
-exec terminator
-exec teams
-exec discord
-
-## Listen for lock event and run i3lock
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/scripts/lock --nofork
-
 ###############################################################################
-# i3 Config Partials
+# WM Config Partials
 ###############################################################################
 
+# Include common partials
+include /usr/share/regolith/common/config.d/*
 
 # Include any regolith i3 partials
 include /usr/share/regolith/i3/config.d/*
 
+# Include any partials common between i3 and sway sessions
+include $HOME/.config/regolith3/common-wm/config.d/*
+
 # Include any user i3 partials
-include $HOME/.config/regolith2/i3/config.d/*
+include $HOME/.config/regolith3/i3/config.d/*
