@@ -1,5 +1,4 @@
 return {
-  { "almo7aya/openingh.nvim" },
   { "nvim-treesitter/nvim-treesitter-context" },
   {
     "sudormrfbin/cheatsheet.nvim",

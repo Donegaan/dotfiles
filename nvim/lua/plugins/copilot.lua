@@ -1,15 +1,9 @@
-local M = {
+return {
   "zbirenbaum/copilot.lua",
-}
-
-function M.config()
-  require("copilot").setup({
-    copilot_node_command = vim.fn.expand("$HOME") .. "/.asdf/installs/nodejs/lts/bin/node", -- Node.js version must be > 16.x
+  opts = {
+    copilot_node_command = vim.fn.expand("$HOME") .. "/.asdf/installs/nodejs/20.16.0/bin/node",
     filetypes = {
       markdown = true,
-      help = true,
     },
-  })
-end
-
-return M
+  },
+}

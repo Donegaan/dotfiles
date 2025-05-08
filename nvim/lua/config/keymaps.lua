@@ -4,6 +4,6 @@
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "n", "nzz")
-vim.keymap.set("n", "<leader>go", "<cmd>:OpenInGHFileLines<CR>", { desc = "Open in GitHub" })
+-- vim.keymap.set("n", "<leader>go", "<cmd>GitLink!<CR>", { desc = "Open in GitHub" })
 
 vim.keymap.set("i", "jk", "<ESC>")
